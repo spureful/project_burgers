@@ -54,14 +54,15 @@ a {
   align-items: center; }
 
 .header {
-  padding-top: 15px;
+  padding-top: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center; }
 
 .header__navigation {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: space-around; }
 
 .menu__list .menu__item {
   display: inline-block;
@@ -80,7 +81,7 @@ a {
     color: #fff; }
 .menu__list .menu__item-link {
   color: #fff;
-  margin: 0 15px; }
+  margin: 0 13px; }
   .menu__list .menu__item-link:hover {
     color: #aaa; }
 
@@ -103,12 +104,14 @@ a {
 .screenmeeting__content {
   flex: 1;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center; }
 
 .screenmeeting__content-img {
-  width: 500px;
-  height: 435px;
+  margin-top: 30px;
+  margin-right: 10px;
+  width: 451px;
+  height: 425px;
   background-image: url(../../img/meeting_screen/drops.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -126,12 +129,13 @@ a {
     left: 35px; }
 
 .screenmeeting__content-title {
-  flex: 0.7;
+  flex: 0.9;
   font-family: 'Gagalin-Regular', sans-serif;
   font-size: 4.5rem;
   font-weight: 400;
   text-transform: uppercase;
-  color: #f9b43b; }
+  color: #f9b43b;
+  margin-bottom: 20px; }
   .screenmeeting__content-title .screenmeeting__content-titlemode {
     font-family: 'Lifehack-Medium', sans-serif;
     text-transform: lowercase;
@@ -139,12 +143,22 @@ a {
     color: #fff;
     font-style: italic;
     font-weight: 400;
+    padding-top: 15px;
     flex-wrap: wrap; }
+
+.screenmeeting_arrow {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transform: rotate(45deg);
+  margin-bottom: 40px; }
 
 .screenmeeting__points-list {
   position: absolute;
-  top: 90px;
-  right: 150px; }
+  top: 80px;
+  right: 50px; }
   .screenmeeting__points-list .screenmeeting__points-item {
     display: block;
     width: 6px;
@@ -165,22 +179,14 @@ a {
       left: 50%;
       transform: translate(-50%, -50%); }
 
-.screenmeeting_arrow {
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  border-bottom: 3px solid #fff;
-  border-right: 3px solid #fff;
-  transform: rotate(45deg);
-  margin-bottom: 37px; }
-
 .screenbest {
   background-color: #fff;
   background-image: url(../../img/best_screen/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: space-around; }
 
 .screenbest__title-text {
   font-family: 'Gagalin-Regular', sans-serif;
@@ -191,10 +197,12 @@ a {
   text-align: center; }
 
 .screenbest__list {
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-around; }
   .screenbest__list .screenbest__item {
-    width: 285px; }
+    width: 290px; }
 
 .screenbest__item-img {
   width: 285px;
@@ -245,18 +253,17 @@ a {
       display: block; }
 
 .screencomments__content {
-  width: 255px;
+  width: 245px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 50px;
+  left: 20px;
   opacity: 0; }
 
 .screencomments__title {
   font-family: 'Gagalin-Regular', sans-serif;
   font-size: 0.875rem;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-weight: normal; }
 
 .screencomments__text {

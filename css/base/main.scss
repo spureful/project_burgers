@@ -104,7 +104,7 @@ a {
 
 
 .header {
-	padding-top: 15px;
+	padding-top: 8px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -113,6 +113,7 @@ a {
 .header__navigation {
 	display: flex;
 	align-items: center;
+	justify-content: space-around;
 
 }
 
@@ -141,7 +142,7 @@ a {
 
 	& .menu__item-link {
 		color: #fff;
-		margin: 0 15px;
+		margin: 0 13px;
 
 
 		&:hover {
@@ -153,7 +154,7 @@ a {
 
 .buttonbuy {
 	@include menufont;
-	;
+
 	border-radius: 5px;
 
 	width: 97px;
@@ -176,17 +177,18 @@ a {
 
 	display: flex;
 
-	justify-content: space-around;
-	align-items: center; //	
+	justify-content: center;
+	align-items: center;
 }
 
 .screenmeeting__content-img {
 
+	
+	margin-top: 30px;
+	margin-right: 10px;
+	width: 451px;
+	height: 425px;
 
-
-
-	width: 500px;
-	height: 435px;
 	background-image: url(../../img/meeting_screen/drops.png);
 
 	background-repeat: no-repeat;
@@ -214,9 +216,10 @@ a {
 
 .screenmeeting__content-title {
 
-	flex: 0.7;
+	flex: 0.9;
 
 	@include titlefont(#f9b43b);
+	margin-bottom: 20px;
 
 
 
@@ -229,19 +232,32 @@ a {
 		color: #fff;
 		font-style: italic;
 		font-weight: 400;
+		padding-top: 15px;
+
 
 		flex-wrap: wrap;
 	}
 }
 
 
+.screenmeeting_arrow {
+	width: 25px;
+	height: 25px;
+	border-radius: 5px;
+	border-bottom: 3px solid #fff;
+	border-right: 3px solid #fff;
 
+	transform: rotate(45deg);
+	margin-bottom: 40px;
+
+
+}
 
 .screenmeeting__points-list {
 
 	position: absolute;
-	top: 90px;
-	right: 150px;
+	top: 80px;
+	right: 50px;
 
 
 	& .screenmeeting__points-item {
@@ -275,18 +291,7 @@ a {
 
 }
 
-.screenmeeting_arrow {
-	width: 30px;
-	height: 30px;
-	border-radius: 5px;
-	border-bottom: 3px solid #fff;
-	border-right: 3px solid #fff;
 
-	transform: rotate(45deg);
-	margin-bottom: 37px;
-
-
-}
 
 //............................................BEST
 .screenbest {
@@ -297,7 +302,9 @@ a {
 
 	display: flex;
 	align-items: center;
+	justify-content: space-around;
 
+	
 
 
 }
@@ -306,16 +313,21 @@ a {
 
 	@include titlefont(#2f3234);
 	text-align: center;
+	
+
 
 }
 
 
 .screenbest__list {
+	margin: 0;
+	padding: 0;
+
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	& .screenbest__item {
 
-		width: 285px;
+		width: 290px;
 	}
 
 }
@@ -369,17 +381,14 @@ a {
 
 
 	& .screencomments__item {
-		position: relative; 
-		
-		
-		
+		position: relative;
+
+
+
 		&:hover .screencomments__content {
-		opacity: 1;
-			
-	}
-		
-		
-		//	& .screencomments__img {
+			opacity: 1;
+
+		} //	& .screencomments__img {
 		//
 		////		width: 275px;
 		////		min-height: 325px;
@@ -409,13 +418,13 @@ a {
 //}
 .screencomments__content {
 
-	width: 255px;
-	
+	width: 245px;
+
 
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	top: 50px;
+	left: 20px;
+	
 
 	opacity: 0;
 
@@ -425,7 +434,7 @@ a {
 	font-family: 'Gagalin-Regular', sans-serif;
 	font-size: 0.875rem;
 	color: #fff;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	font-weight: normal;
 }
 
@@ -442,5 +451,3 @@ a {
 	@extend .buttonbuy;
 	background-color: #2f3234;
 }
-
-
