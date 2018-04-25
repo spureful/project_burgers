@@ -189,7 +189,7 @@ a {
 	width: 451px;
 	height: 425px;
 
-	background-image: url(../../img/meeting_screen/drops.png);
+	background-image: url(../../img/icons/drops.svg);
 
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -241,14 +241,18 @@ a {
 
 
 .screenmeeting_arrow {
-	width: 25px;
-	height: 25px;
-	border-radius: 5px;
-	border-bottom: 3px solid #fff;
-	border-right: 3px solid #fff;
-
-	transform: rotate(45deg);
-	margin-bottom: 40px;
+	width: 30px;
+	height: 30px;
+	background-image: url(../../img/icons/arrow-scroll.svg);
+	background-repeat: no-repeat;
+	
+	margin-bottom: 30px;
+//	border-radius: 5px;
+//	border-bottom: 3px solid #fff;
+//	border-right: 3px solid #fff;
+//
+//	transform: rotate(45deg);
+//	
 
 
 }
