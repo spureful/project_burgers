@@ -1,11 +1,8 @@
 //@import url(base.scss);
 //@import url(../blocks/meeting.scss);
-
 //.....................FUNCT
-
-
 @mixin titlefont($color) {
-	font-family: 'Gagalin-Regular';
+	font-family: 'Gagalin-Regular', sans-serif;
 	font-size: 4.5rem;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -54,6 +51,8 @@ h3 {
 ul {
 	& li {
 		list-style: none;
+		margin: 0;
+		padding: 0;
 	}
 }
 
@@ -113,6 +112,7 @@ a {
 
 .header__navigation {
 	display: flex;
+	align-items: center;
 
 }
 
@@ -153,10 +153,12 @@ a {
 
 .buttonbuy {
 	@include menufont;
-
-	display: inline-block;
+	;
 	border-radius: 5px;
-	padding: 13px 15px;
+
+	width: 97px;
+	height: 36px;
+	text-align: center;
 	border: none;
 	background-color: #e45028;
 
@@ -171,23 +173,20 @@ a {
 //...................screenmeeting__block
 .screenmeeting__content {
 	flex: 1;
-	
-	display: flex;
-	
-	justify-content: space-around;
-	align-items: center;
-	
-//	
 
+	display: flex;
+
+	justify-content: space-around;
+	align-items: center; //	
 }
 
 .screenmeeting__content-img {
-	
 
-	
-	
+
+
+
 	width: 500px;
-	height:435px;
+	height: 435px;
 	background-image: url(../../img/meeting_screen/drops.png);
 
 	background-repeat: no-repeat;
@@ -214,17 +213,17 @@ a {
 
 
 .screenmeeting__content-title {
-	
-	flex:0.7 ; 
+
+	flex: 0.7;
 
 	@include titlefont(#f9b43b);
-	
-	
-	
+
+
+
 
 
 	& .screenmeeting__content-titlemode {
-		font-family: 'Lifehack-Medium';
+		font-family: 'Lifehack-Medium', sans-serif;
 		text-transform: lowercase;
 		font-size: 4rem;
 		color: #fff;
@@ -242,7 +241,7 @@ a {
 
 	position: absolute;
 	top: 90px;
-	right: 50px;
+	right: 150px;
 
 
 	& .screenmeeting__points-item {
@@ -285,6 +284,163 @@ a {
 
 	transform: rotate(45deg);
 	margin-bottom: 37px;
-	
+
 
 }
+
+//............................................BEST
+.screenbest {
+	background-color: #fff;
+	background-image: url(../../img/best_screen/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	display: flex;
+	align-items: center;
+
+
+
+}
+
+.screenbest__title-text {
+
+	@include titlefont(#2f3234);
+	text-align: center;
+
+}
+
+
+.screenbest__list {
+	display: flex;
+	justify-content: space-between;
+	& .screenbest__item {
+
+		width: 285px;
+	}
+
+}
+
+.screenbest__item-img {
+
+	width: 285px;
+	min-height: 150px;
+}
+
+@each $screenbestimg in (meat, hand, natural) {
+	.screenbest__item-img_#{$screenbestimg} {
+		background-image: url(../../img/icons/#{$screenbestimg}.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+
+	}
+
+}
+
+.screenbest__item-title {
+
+	text-align: center;
+	vertical-align: baseline;
+	font-family: 'Lifehack-Medium', sans-serif;
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+
+}
+
+
+.screenbest__item-content {
+	font-family: 'ubuntulight', sans-serif;
+	color: rgba(47, 50, 52, 0.8);
+	text-align: justify;
+	line-height: 24px;
+}
+
+
+//......................................COMMENTS
+//.test {
+//	@extend .buttonbuy;
+//	}
+.screencomments__list {
+	display: flex;
+	align-content: flex-start;
+	flex-wrap: wrap;
+
+	margin: 0;
+	padding: 0;
+
+
+	& .screencomments__item {
+		position: relative; 
+		
+		
+		
+		&:hover .screencomments__content {
+		opacity: 1;
+			
+	}
+		
+		
+		//	& .screencomments__img {
+		//
+		////		width: 275px;
+		////		min-height: 325px;
+		////		height: 50vh;
+		//		
+		//		
+		//
+		//	}
+		& .screencomments__avatar {
+			width: 275px;
+			height: 50vh;
+			min-height: 325px;
+
+			display: block;
+		}
+
+
+	}
+
+}
+
+//@each $screencommentsimg in (anna, constantin, alina, max, igor, elena, ivan, gena) {
+//	.screencomments__img_#{$screencommentsimg} {
+//		background: url(../../img/comments_screen/#{$screencommentsimg}.jpg) no-repeat center;
+//		background-size: cover;
+//	}
+//}
+.screencomments__content {
+
+	width: 255px;
+	
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	opacity: 0;
+
+}
+
+.screencomments__title {
+	font-family: 'Gagalin-Regular', sans-serif;
+	font-size: 0.875rem;
+	color: #fff;
+	margin-bottom: 30px;
+	font-weight: normal;
+}
+
+.screencomments__text {
+	font-family: 'ubuntulight', sans-serif;
+	font-size: 0.875rem;
+	color: #fff;
+	line-height: 20px;
+	text-align: left;
+
+}
+
+.screencomments__button {
+	@extend .buttonbuy;
+	background-color: #2f3234;
+}
+
+

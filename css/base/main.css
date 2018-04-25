@@ -20,7 +20,9 @@ h3 {
   padding: 0; }
 
 ul li {
-  list-style: none; }
+  list-style: none;
+  margin: 0;
+  padding: 0; }
 
 a {
   text-decoration: none; }
@@ -58,7 +60,8 @@ a {
   align-items: center; }
 
 .header__navigation {
-  display: flex; }
+  display: flex;
+  align-items: center; }
 
 .menu__list .menu__item {
   display: inline-block;
@@ -81,19 +84,20 @@ a {
   .menu__list .menu__item-link:hover {
     color: #aaa; }
 
-.buttonbuy {
+.buttonbuy, .screencomments__button {
   font-family: 'ubuntumedium', sans-serif;
   font-size: 0.81rem;
   font-weight: 600;
   color: #fff;
   text-transform: uppercase;
-  display: inline-block;
   border-radius: 5px;
-  padding: 13px 15px;
+  width: 97px;
+  height: 36px;
+  text-align: center;
   border: none;
   background-color: #e45028;
   cursor: pointer; }
-  .buttonbuy:hover {
+  .buttonbuy:hover, .screencomments__button:hover {
     color: burlywood; }
 
 .screenmeeting__content {
@@ -123,13 +127,13 @@ a {
 
 .screenmeeting__content-title {
   flex: 0.7;
-  font-family: 'Gagalin-Regular';
+  font-family: 'Gagalin-Regular', sans-serif;
   font-size: 4.5rem;
   font-weight: 400;
   text-transform: uppercase;
   color: #f9b43b; }
   .screenmeeting__content-title .screenmeeting__content-titlemode {
-    font-family: 'Lifehack-Medium';
+    font-family: 'Lifehack-Medium', sans-serif;
     text-transform: lowercase;
     font-size: 4rem;
     color: #fff;
@@ -140,7 +144,7 @@ a {
 .screenmeeting__points-list {
   position: absolute;
   top: 90px;
-  right: 50px; }
+  right: 150px; }
   .screenmeeting__points-list .screenmeeting__points-item {
     display: block;
     width: 6px;
@@ -169,3 +173,98 @@ a {
   border-right: 3px solid #fff;
   transform: rotate(45deg);
   margin-bottom: 37px; }
+
+.screenbest {
+  background-color: #fff;
+  background-image: url(../../img/best_screen/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center; }
+
+.screenbest__title-text {
+  font-family: 'Gagalin-Regular', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #2f3234;
+  text-align: center; }
+
+.screenbest__list {
+  display: flex;
+  justify-content: space-between; }
+  .screenbest__list .screenbest__item {
+    width: 285px; }
+
+.screenbest__item-img {
+  width: 285px;
+  min-height: 150px; }
+
+.screenbest__item-img_meat {
+  background-image: url(../../img/icons/meat.svg);
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.screenbest__item-img_hand {
+  background-image: url(../../img/icons/hand.svg);
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.screenbest__item-img_natural {
+  background-image: url(../../img/icons/natural.svg);
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.screenbest__item-title {
+  text-align: center;
+  vertical-align: baseline;
+  font-family: 'Lifehack-Medium', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px; }
+
+.screenbest__item-content {
+  font-family: 'ubuntulight', sans-serif;
+  color: rgba(47, 50, 52, 0.8);
+  text-align: justify;
+  line-height: 24px; }
+
+.screencomments__list {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0; }
+  .screencomments__list .screencomments__item {
+    position: relative; }
+    .screencomments__list .screencomments__item:hover .screencomments__content {
+      opacity: 1; }
+    .screencomments__list .screencomments__item .screencomments__avatar {
+      width: 275px;
+      height: 50vh;
+      min-height: 325px;
+      display: block; }
+
+.screencomments__content {
+  width: 255px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; }
+
+.screencomments__title {
+  font-family: 'Gagalin-Regular', sans-serif;
+  font-size: 0.875rem;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: normal; }
+
+.screencomments__text {
+  font-family: 'ubuntulight', sans-serif;
+  font-size: 0.875rem;
+  color: #fff;
+  line-height: 20px;
+  text-align: left; }
+
+.screencomments__button {
+  background-color: #2f3234; }
