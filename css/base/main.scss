@@ -1,0 +1,290 @@
+//@import url(base.scss);
+//@import url(../blocks/meeting.scss);
+
+//.....................FUNCT
+
+
+@mixin titlefont($color) {
+	font-family: 'Gagalin-Regular';
+	font-size: 4.5rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: $color;
+}
+
+@mixin menufont {
+	font-family: 'ubuntumedium', sans-serif;
+	font-size: 0.81rem;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+
+}
+
+$wrapwidth: 1100px;
+
+
+//  ..........................BASE
+html,
+body {
+	height: 100%;
+	width: 100%;
+	overflow: visible;
+}
+
+html {
+	box-sizing: border-box;
+
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	& li {
+		list-style: none;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.wrapper {
+	height: 100%;
+	min-width: $wrapwidth;
+	margin: 0 auto;
+}
+
+
+.screen {
+
+	min-height: 650px;
+	height: 100vh;
+	width: 1100px;
+	margin: 0 auto;
+
+	position: relative;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+//....................MEETING
+.screenmeeting {
+
+	background-color: black;
+	background-image: url(../../img/meeting_screen/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+
+}
+
+
+
+.header {
+	padding-top: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__navigation {
+	display: flex;
+
+}
+
+.menu__list {
+	& .menu__item {
+
+		display: inline-block;
+		@include menufont;
+
+		&:after {
+			content: "•";
+			display: inline;
+			color: #fff;
+
+
+
+		}
+
+
+		&:last-child:after {
+			content: "";
+			display: inline-block;
+			color: #fff;
+		}
+	}
+
+	& .menu__item-link {
+		color: #fff;
+		margin: 0 15px;
+
+
+		&:hover {
+			color: #aaa;
+		}
+	}
+
+}
+
+.buttonbuy {
+	@include menufont;
+
+	display: inline-block;
+	border-radius: 5px;
+	padding: 13px 15px;
+	border: none;
+	background-color: #e45028;
+
+	cursor: pointer;
+
+	&:hover {
+		color: burlywood;
+	}
+
+}
+
+//...................screenmeeting__block
+.screenmeeting__content {
+	flex: 1;
+	
+	display: flex;
+	
+	justify-content: space-around;
+	align-items: center;
+	
+//	
+
+}
+
+.screenmeeting__content-img {
+	
+
+	
+	
+	width: 500px;
+	height:435px;
+	background-image: url(../../img/meeting_screen/drops.png);
+
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+
+	&:after {
+		content: "";
+		display: block;
+		width: 420px;
+		height: 435px;
+		background-image: url(../../img/meeting_screen/burger.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		position: absolute;
+		top: -60px;
+		left: 35px;
+	}
+
+
+}
+
+
+
+.screenmeeting__content-title {
+	
+	flex:0.7 ; 
+
+	@include titlefont(#f9b43b);
+	
+	
+	
+
+
+	& .screenmeeting__content-titlemode {
+		font-family: 'Lifehack-Medium';
+		text-transform: lowercase;
+		font-size: 4rem;
+		color: #fff;
+		font-style: italic;
+		font-weight: 400;
+
+		flex-wrap: wrap;
+	}
+}
+
+
+
+
+.screenmeeting__points-list {
+
+	position: absolute;
+	top: 90px;
+	right: 50px;
+
+
+	& .screenmeeting__points-item {
+
+
+
+		display: block;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: #fff;
+		margin-bottom: 15px;
+
+		position: relative;
+
+
+		&:first-child:after {
+			content: "";
+			display: block;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			border: 1px solid #fff;
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+}
+
+.screenmeeting_arrow {
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	border-bottom: 3px solid #fff;
+	border-right: 3px solid #fff;
+
+	transform: rotate(45deg);
+	margin-bottom: 37px;
+	
+
+}
