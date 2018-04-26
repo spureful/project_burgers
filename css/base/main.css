@@ -20,27 +20,22 @@ h3 {
   padding: 0; }
 
 ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
+  list-style: none; }
 
 a {
   text-decoration: none; }
 
 .wrapper {
   height: 100%;
-  min-width: 1100px;
   margin: 0 auto; }
 
 .screen {
-  min-height: 650px;
   height: 100vh;
-  width: 1100px;
-  margin: 0 auto;
-  position: relative; }
+  min-height: 650px;
+  margin: 0 auto; }
 
 .container {
-  width: 960px;
+  max-width: 1100px;
   margin: 0 auto; }
 
 .screenmeeting {
@@ -50,14 +45,14 @@ a {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center; }
+  justify-content: space-between; }
 
 .header {
   padding-top: 8px;
   display: flex;
-  justify-content: space-between;
-  align-items: center; }
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 55px; }
 
 .header__navigation {
   display: flex;
@@ -85,7 +80,12 @@ a {
   .menu__list .menu__item-link:hover {
     color: #aaa; }
 
-.buttonbuy, .screencomments__button {
+.screenmeeting__anker {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.button, .screencomments__button {
   font-family: 'ubuntumedium', sans-serif;
   font-size: 0.81rem;
   font-weight: 600;
@@ -98,44 +98,43 @@ a {
   border: none;
   background-color: #e45028;
   cursor: pointer; }
-  .buttonbuy:hover, .screencomments__button:hover {
+  .button:hover, .screencomments__button:hover {
     color: burlywood; }
 
 .screenmeeting__content {
-  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 30px; }
 
 .screenmeeting__content-img {
-  margin-top: 30px;
-  margin-right: 10px;
   width: 451px;
   height: 425px;
   background-image: url(../../img/icons/drops.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  position: relative; }
+  position: relative;
+  margin-left: -40px; }
   .screenmeeting__content-img:after {
     content: "";
     display: block;
-    width: 420px;
-    height: 435px;
+    width: 417px;
+    height: 424px;
     background-image: url(../../img/meeting_screen/burger.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    top: -60px;
-    left: 35px; }
+    top: -62px;
+    left: 30px; }
 
 .screenmeeting__content-title {
-  flex: 0.9;
+  flex: 0;
   font-family: 'Gagalin-Regular', sans-serif;
   font-size: 4.5rem;
   font-weight: 400;
   text-transform: uppercase;
   color: #f9b43b;
-  margin-bottom: 20px; }
+  margin-top: -50px; }
   .screenmeeting__content-title .screenmeeting__content-titlemode {
     font-family: 'Lifehack-Medium', sans-serif;
     text-transform: lowercase;
@@ -146,36 +145,13 @@ a {
     padding-top: 15px;
     flex-wrap: wrap; }
 
-.screenmeeting_arrow {
+.screenmeeting_arrow-link {
+  display: block;
   width: 30px;
   height: 30px;
   background-image: url(../../img/icons/arrow-scroll.svg);
   background-repeat: no-repeat;
-  margin-bottom: 30px; }
-
-.screenmeeting__points-list {
-  position: absolute;
-  top: 80px;
-  right: 50px; }
-  .screenmeeting__points-list .screenmeeting__points-item {
-    display: block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #fff;
-    margin-bottom: 15px;
-    position: relative; }
-    .screenmeeting__points-list .screenmeeting__points-item:first-child:after {
-      content: "";
-      display: block;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      border: 1px solid #fff;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+  margin: auto; }
 
 .screenbest {
   background-color: #fff;
@@ -192,18 +168,24 @@ a {
   font-weight: 400;
   text-transform: uppercase;
   color: #2f3234;
-  text-align: center; }
+  text-align: center;
+  margin-top: -50px; }
 
 .screenbest__list {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-between; }
   .screenbest__list .screenbest__item {
-    width: 290px; }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 290px;
+    margin: 0 15px; }
 
 .screenbest__item-img {
-  width: 285px;
+  width: 185px;
   min-height: 150px; }
 
 .screenbest__item-img_meat {
@@ -231,12 +213,17 @@ a {
 .screenbest__item-content {
   font-family: 'ubuntulight', sans-serif;
   color: rgba(47, 50, 52, 0.8);
+  font-size: 0.8rem;
   text-align: justify;
   line-height: 24px; }
 
+.screencomments {
+  background-color: #333; }
+
 .screencomments__list {
   display: flex;
-  align-content: flex-start;
+  align-content: stretch;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 0;
   padding: 0; }
@@ -245,7 +232,7 @@ a {
     .screencomments__list .screencomments__item:hover .screencomments__content {
       opacity: 1; }
     .screencomments__list .screencomments__item .screencomments__avatar {
-      width: 275px;
+      max-width: 275px;
       height: 50vh;
       min-height: 325px;
       display: block; }
@@ -273,3 +260,27 @@ a {
 
 .screencomments__button {
   background-color: #2f3234; }
+
+.pagginator__list {
+  position: fixed;
+  top: 80px;
+  right: 50px; }
+  .pagginator__list .pagginator__item {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-bottom: 15px;
+    position: relative; }
+    .pagginator__list .pagginator__item:first-child:after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }

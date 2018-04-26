@@ -18,7 +18,7 @@
 
 }
 
-$wrapwidth: 1100px;
+
 
 
 //  ..........................BASE
@@ -49,10 +49,10 @@ h3 {
 }
 
 ul {
+
 	& li {
 		list-style: none;
-		margin: 0;
-		padding: 0;
+
 	}
 }
 
@@ -64,24 +64,24 @@ a {
 
 .wrapper {
 	height: 100%;
-	min-width: $wrapwidth;
+
 	margin: 0 auto;
 }
 
 
 .screen {
 
-	min-height: 650px;
+
 	height: 100vh;
-	width: 1100px;
+	min-height: 650px;
 	margin: 0 auto;
 
-	position: relative;
 }
 
 .container {
-	width: 960px;
+	max-width: 1100px;
 	margin: 0 auto;
+
 }
 
 
@@ -95,8 +95,8 @@ a {
 
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
+	justify-content: space-between;
+
 
 
 }
@@ -104,10 +104,12 @@ a {
 
 
 .header {
+
 	padding-top: 8px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
+	margin-bottom: 55px;
 }
 
 .header__navigation {
@@ -152,7 +154,14 @@ a {
 
 }
 
-.buttonbuy {
+.screenmeeting__anker {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.button {
 	@include menufont;
 
 	border-radius: 5px;
@@ -173,19 +182,17 @@ a {
 
 //...................screenmeeting__block
 .screenmeeting__content {
-	flex: 1;
 
 	display: flex;
 
 	justify-content: center;
 	align-items: center;
+
+	margin-bottom: 30px;
 }
 
 .screenmeeting__content-img {
 
-	
-	margin-top: 30px;
-	margin-right: 10px;
 	width: 451px;
 	height: 425px;
 
@@ -195,18 +202,20 @@ a {
 	background-size: contain;
 	position: relative;
 
+	margin-left: -40px;
+
 	&:after {
 		content: "";
 		display: block;
-		width: 420px;
-		height: 435px;
+		width: 417px;
+		height: 424px;
 		background-image: url(../../img/meeting_screen/burger.png);
 		background-repeat: no-repeat;
 		background-size: cover;
 
 		position: absolute;
-		top: -60px;
-		left: 35px;
+		top: -62px;
+		left: 30px;
 	}
 
 
@@ -216,10 +225,11 @@ a {
 
 .screenmeeting__content-title {
 
-	flex: 0.9;
+	flex: 0;
 
 	@include titlefont(#f9b43b);
-	margin-bottom: 20px;
+
+	margin-top: -50px;
 
 
 
@@ -240,31 +250,201 @@ a {
 }
 
 
-.screenmeeting_arrow {
+
+.screenmeeting_arrow-link {
+	display: block;
 	width: 30px;
 	height: 30px;
 	background-image: url(../../img/icons/arrow-scroll.svg);
 	background-repeat: no-repeat;
-	
-	margin-bottom: 30px;
-//	border-radius: 5px;
-//	border-bottom: 3px solid #fff;
-//	border-right: 3px solid #fff;
-//
-//	transform: rotate(45deg);
-//	
+	margin: auto; //	margin-bottom: 30px;
+}
+
+
+
+
+//............................................BEST
+.screenbest {
+	background-color: #fff;
+	background-image: url(../../img/best_screen/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+
 
 
 }
 
-.screenmeeting__points-list {
+.screenbest__title-text {
+
+	@include titlefont(#2f3234);
+	text-align: center;
+   margin-top: -50px;
+
+
+}
+
+
+.screenbest__list {
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	justify-content: space-between;
+
+	& .screenbest__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+
+
+		max-width: 290px;
+		margin: 0 15px;
+	}
+
+}
+
+.screenbest__item-img {
+
+	width: 185px;
+	min-height: 150px;
+}
+
+@each $screenbestimg in (meat, hand, natural) {
+	.screenbest__item-img_#{$screenbestimg} {
+		background-image: url(../../img/icons/#{$screenbestimg}.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+
+	}
+
+}
+
+.screenbest__item-title {
+
+	text-align: center;
+	vertical-align: baseline;
+	font-family: 'Lifehack-Medium', sans-serif;
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+
+}
+
+
+.screenbest__item-content {
+	font-family: 'ubuntulight', sans-serif;
+	color: rgba(47, 50, 52, 0.8);
+	font-size: 0.8rem;
+	text-align: justify;
+	line-height: 24px;
+
+
+}
+
+
+//......................................COMMENTS
+.screencomments {
+	background-color: #333;
+}
+
+.screencomments__list {
+
+
+	display: flex;
+	align-content: stretch;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	margin: 0;
+	padding: 0;
+
+
+	& .screencomments__item {
+		position: relative;
+
+
+
+		&:hover .screencomments__content {
+			opacity: 1;
+
+		} //	& .screencomments__img {
+		//
+		////		width: 275px;
+		////		min-height: 325px;
+		////		height: 50vh;
+		//		
+		//		
+		//
+		//	}
+		& .screencomments__avatar {
+			max-width: 275px;
+			height: 50vh;
+			min-height: 325px;
+
+			display: block;
+		}
+
+
+	}
+
+}
+
+//@each $screencommentsimg in (anna, constantin, alina, max, igor, elena, ivan, gena) {
+//	.screencomments__img_#{$screencommentsimg} {
+//		background: url(../../img/comments_screen/#{$screencommentsimg}.jpg) no-repeat center;
+//		background-size: cover;
+//	}
+//}
+.screencomments__content {
+
+	width: 245px;
+
 
 	position: absolute;
+	top: 50px;
+	left: 20px;
+
+
+	opacity: 0;
+
+}
+
+.screencomments__title {
+	font-family: 'Gagalin-Regular', sans-serif;
+	font-size: 0.875rem;
+	color: #fff;
+	margin-bottom: 20px;
+	font-weight: normal;
+}
+
+.screencomments__text {
+	font-family: 'ubuntulight', sans-serif;
+	font-size: 0.875rem;
+	color: #fff;
+	line-height: 20px;
+	text-align: left;
+
+}
+
+.screencomments__button {
+	@extend .button;
+	background-color: #2f3234;
+}
+
+//..................PAGGINATOR
+.pagginator__list {
+
+	position: fixed;
 	top: 80px;
 	right: 50px;
 
 
-	& .screenmeeting__points-item {
+	& .pagginator__item {
 
 
 
@@ -293,165 +473,4 @@ a {
 		}
 	}
 
-}
-
-
-
-//............................................BEST
-.screenbest {
-	background-color: #fff;
-	background-image: url(../../img/best_screen/bg.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-
-	
-
-
-}
-
-.screenbest__title-text {
-
-	@include titlefont(#2f3234);
-	text-align: center;
-	
-
-
-}
-
-
-.screenbest__list {
-	margin: 0;
-	padding: 0;
-
-	display: flex;
-	justify-content: space-around;
-	& .screenbest__item {
-
-		width: 290px;
-	}
-
-}
-
-.screenbest__item-img {
-
-	width: 285px;
-	min-height: 150px;
-}
-
-@each $screenbestimg in (meat, hand, natural) {
-	.screenbest__item-img_#{$screenbestimg} {
-		background-image: url(../../img/icons/#{$screenbestimg}.svg);
-		background-repeat: no-repeat;
-		background-position: center;
-
-	}
-
-}
-
-.screenbest__item-title {
-
-	text-align: center;
-	vertical-align: baseline;
-	font-family: 'Lifehack-Medium', sans-serif;
-	font-size: 1.5rem;
-	margin-bottom: 20px;
-
-}
-
-
-.screenbest__item-content {
-	font-family: 'ubuntulight', sans-serif;
-	color: rgba(47, 50, 52, 0.8);
-	text-align: justify;
-	line-height: 24px;
-}
-
-
-//......................................COMMENTS
-//.test {
-//	@extend .buttonbuy;
-//	}
-.screencomments__list {
-	display: flex;
-	align-content: flex-start;
-	flex-wrap: wrap;
-
-	margin: 0;
-	padding: 0;
-
-
-	& .screencomments__item {
-		position: relative;
-
-
-
-		&:hover .screencomments__content {
-			opacity: 1;
-
-		} //	& .screencomments__img {
-		//
-		////		width: 275px;
-		////		min-height: 325px;
-		////		height: 50vh;
-		//		
-		//		
-		//
-		//	}
-		& .screencomments__avatar {
-			width: 275px;
-			height: 50vh;
-			min-height: 325px;
-
-			display: block;
-		}
-
-
-	}
-
-}
-
-//@each $screencommentsimg in (anna, constantin, alina, max, igor, elena, ivan, gena) {
-//	.screencomments__img_#{$screencommentsimg} {
-//		background: url(../../img/comments_screen/#{$screencommentsimg}.jpg) no-repeat center;
-//		background-size: cover;
-//	}
-//}
-.screencomments__content {
-
-	width: 245px;
-
-
-	position: absolute;
-	top: 50px;
-	left: 20px;
-	
-
-	opacity: 0;
-
-}
-
-.screencomments__title {
-	font-family: 'Gagalin-Regular', sans-serif;
-	font-size: 0.875rem;
-	color: #fff;
-	margin-bottom: 20px;
-	font-weight: normal;
-}
-
-.screencomments__text {
-	font-family: 'ubuntulight', sans-serif;
-	font-size: 0.875rem;
-	color: #fff;
-	line-height: 20px;
-	text-align: left;
-
-}
-
-.screencomments__button {
-	@extend .buttonbuy;
-	background-color: #2f3234;
 }
