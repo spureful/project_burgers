@@ -93,23 +93,23 @@ a {
 	background-repeat: no-repeat;
 	background-size: cover;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-
-
-
 }
 
+.container-screenmeeting {
+	height: 100vh;
+	min-height: 650px;
 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
 
 .header {
 
-	padding-top: 8px;
-	display: flex;
+		display: flex;
 	justify-content: space-around;
-	align-items: center;
-	margin-bottom: 55px;
+	align-items: flex-start;
+
 }
 
 .header__navigation {
@@ -120,6 +120,7 @@ a {
 }
 
 .menu__list {
+	
 	& .menu__item {
 
 		display: inline-block;
@@ -188,7 +189,7 @@ a {
 	justify-content: center;
 	align-items: center;
 
-	margin-bottom: 30px;
+	
 }
 
 .screenmeeting__content-img {
@@ -283,7 +284,7 @@ a {
 
 	@include titlefont(#2f3234);
 	text-align: center;
-   margin-top: -50px;
+	margin-top: -50px;
 
 
 }

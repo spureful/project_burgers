@@ -42,17 +42,19 @@ a {
   background-color: black;
   background-image: url(../../img/meeting_screen/bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; }
+
+.container-screenmeeting {
+  height: 100vh;
+  min-height: 650px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-around; }
 
 .header {
-  padding-top: 8px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  margin-bottom: 55px; }
+  align-items: flex-start; }
 
 .header__navigation {
   display: flex;
@@ -104,8 +106,7 @@ a {
 .screenmeeting__content {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 30px; }
+  align-items: center; }
 
 .screenmeeting__content-img {
   width: 451px;
