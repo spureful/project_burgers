@@ -1,0 +1,88 @@
+.screenbest {
+	background-color: #fff;
+	background-image: url(../../img/best_screen/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	
+	display: flex;
+align-items: center;
+
+
+}
+
+.screenbest__container {
+	
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+
+}
+
+.screenbest__title-text {
+
+	@include titlefont(#2f3234);
+	text-align: center;
+	margin-top: -50px;
+
+
+}
+
+
+.screenbest__list {
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	justify-content: space-between;
+
+	& .screenbest__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+
+
+		max-width: 290px;
+		margin: 0 15px;
+	}
+
+}
+
+.screenbest__item-img {
+
+	width: 185px;
+	min-height: 150px;
+}
+
+@each $screenbestimg in (meat, hand, natural) {
+	.screenbest__item-img_#{$screenbestimg} {
+		background-image: url(../img/icons/#{$screenbestimg}.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+
+	}
+
+}
+
+.screenbest__item-title {
+
+	text-align: center;
+	vertical-align: baseline;
+	font-family: 'Lifehack-Medium', sans-serif;
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+
+}
+
+
+.screenbest__item-content {
+	font-family: 'ubuntulight', sans-serif;
+	color: rgba(47, 50, 52, 0.8);
+	font-size: 0.8rem;
+	text-align: justify;
+	line-height: 24px;
+
+
+}
+

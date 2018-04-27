@@ -1,0 +1,88 @@
+.screencomments {
+	background-color: #333;
+	
+}
+
+.screencomments__list {
+
+
+	display: flex;
+	align-content: stretch;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	margin: 0;
+	padding: 0;
+
+
+	& .screencomments__item {
+		position: relative;
+
+
+
+		&:hover .screencomments__content {
+			opacity: 1;
+
+		} //	& .screencomments__img {
+		//
+		////		width: 275px;
+		////		min-height: 325px;
+		////		height: 50vh;
+		//		
+		//		
+		//
+		//	}
+		& .screencomments__avatar {
+//			max-width: 275px;
+			height: 50vh;
+			min-height: 325px;
+
+			display: block;
+		}
+
+
+	}
+
+}
+
+//@each $screencommentsimg in (anna, constantin, alina, max, igor, elena, ivan, gena) {
+//	.screencomments__img_#{$screencommentsimg} {
+//		background: url(../../img/comments_screen/#{$screencommentsimg}.jpg) no-repeat center;
+//		background-size: cover;
+//	}
+//}
+.screencomments__content {
+
+//	width: 245px;
+
+
+	position: absolute;
+	top: 50px;
+	left: 20px;
+
+
+	opacity: 0;
+
+}
+
+.screencomments__title {
+	font-family: 'Gagalin-Regular', sans-serif;
+	font-size: 0.875rem;
+	color: #fff;
+	margin-bottom: 20px;
+	font-weight: normal;
+}
+
+.screencomments__text {
+	font-family: 'ubuntulight', sans-serif;
+	font-size: 0.875rem;
+	color: #fff;
+	line-height: 20px;
+	text-align: left;
+
+}
+
+.screencomments__button {
+	@extend .button;
+	background-color: #2f3234;
+}

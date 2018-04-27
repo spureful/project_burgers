@@ -1,0 +1,16 @@
+@mixin titlefont($color) {
+	font-family: 'Gagalin-Regular', sans-serif;
+	font-size: 4.5rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: $color;
+}
+
+@mixin menufont {
+	font-family: 'ubuntumedium', sans-serif;
+	font-size: 0.81rem;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+
+}

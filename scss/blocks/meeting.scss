@@ -1,0 +1,178 @@
+.screenmeeting {
+
+	background-color: black;
+	background-image: url(../../img/meeting_screen/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+.screenmeeting__container {
+	height: 100vh;
+	min-height: 650px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.header {
+
+		display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+
+}
+
+.header__navigation {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+}
+
+.menu__list {
+	
+	& .menu__item {
+
+		display: inline-block;
+		@include menufont;
+
+		&:after {
+			content: "•";
+			display: inline;
+			color: #fff;
+
+
+
+		}
+
+
+		&:last-child:after {
+			content: "";
+			display: inline-block;
+			color: #fff;
+		}
+	}
+
+	& .menu__item-link {
+		color: #fff;
+		margin: 0 13px;
+
+
+		&:hover {
+			color: #aaa;
+		}
+	}
+
+}
+
+.screenmeeting__anker {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.button {
+	
+	border-radius: 5px;
+
+	width: 97px;
+	height: 36px;
+	text-align: center;
+	border: none;
+	background-color: #e45028;
+
+	cursor: pointer;
+	
+	@include menufont;
+
+	&:hover {
+		color: burlywood;
+	}
+
+}
+
+//...................screenmeeting__block
+.screenmeeting__content {
+
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+
+	
+}
+
+.screenmeeting__content-img {
+
+	width: 451px;
+	height: 425px;
+
+	background-image: url(../img/icons/drops.svg);
+
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+
+	margin-left: -40px;
+
+	&:after {
+		content: "";
+		display: block;
+		width: 417px;
+		height: 424px;
+		background-image: url(../img/meeting_screen/burger.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		position: absolute;
+		top: -62px;
+		left: 30px;
+	}
+
+
+}
+
+
+
+.screenmeeting__content-title {
+
+	flex: 0;
+
+	@include titlefont(#f9b43b);
+
+	margin-top: -50px;
+
+
+
+
+
+	& .screenmeeting__content-titlemode {
+		font-family: 'Lifehack-Medium', sans-serif;
+		text-transform: lowercase;
+		font-size: 4rem;
+		color: #fff;
+		font-style: italic;
+		font-weight: 400;
+		padding-top: 15px;
+
+
+		flex-wrap: wrap;
+	}
+}
+
+
+
+.screenmeeting_arrow-link {
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-image: url(../../img/icons/arrow-scroll.svg);
+	background-repeat: no-repeat;
+	margin: auto; //	margin-bottom: 30px;
+}
+
+
+
