@@ -39,7 +39,7 @@ a {
   min-height: 650px; }
 
 .screen {
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto; }
 
 .container {
@@ -47,7 +47,8 @@ a {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  min-height: 650px; }
 
 .screenmeeting {
   background-color: black;
@@ -82,34 +83,53 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
 
-.menu__list .menu__item {
-  display: inline-block;
-  font-family: 'ubuntumedium', sans-serif;
-  font-size: 0.81rem;
-  font-weight: 600;
-  color: #fff;
-  text-transform: uppercase; }
-  .menu__list .menu__item:after {
-    content: "•";
-    display: inline;
-    color: #fff; }
-  .menu__list .menu__item:last-child:after {
-    content: "";
-    display: inline-block;
-    color: #fff; }
-.menu__list .menu__item-link {
-  color: #fff;
-  margin: 0 13px; }
-  .menu__list .menu__item-link:hover {
-    color: #aaa; }
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .menu__list .menu__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-family: 'ubuntumedium', sans-serif;
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase; }
+    .menu__list .menu__item:after {
+      content: "•";
+      display: block;
+      color: #fff; }
+    .menu__list .menu__item:last-child:after {
+      content: "";
+      display: block;
+      color: #fff; }
+  .menu__list .menu__item-link {
+    color: #fff;
+    margin: 0 13px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .menu__list .menu__item-link:hover {
+      color: #aaa; }
 
-.screenmeeting__anker {
+.menu__item-link_button {
+  border-radius: 5px;
+  width: 97px;
+  height: 36px;
+  border: none;
+  background-color: #e45028;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,22 +138,13 @@ a {
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
-
-.button, .screencomments__button {
-  border-radius: 5px;
-  width: 97px;
-  height: 36px;
-  text-align: center;
-  border: none;
-  background-color: #e45028;
-  cursor: pointer;
+          justify-content: center;
   font-family: 'ubuntumedium', sans-serif;
   font-size: 0.81rem;
   font-weight: 600;
   color: #fff;
   text-transform: uppercase; }
-  .button:hover, .screencomments__button:hover {
+  .menu__item-link_button:hover {
     color: burlywood; }
 
 .screenmeeting__content {
@@ -200,13 +211,7 @@ a {
   background-color: #fff;
   background-image: url(../../img/best_screen/bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  background-size: cover; }
 
 .screenbest__container {
   -webkit-box-orient: vertical;
@@ -216,8 +221,9 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .screenbest__title-text {
   font-family: 'Gagalin-Regular', sans-serif;
@@ -234,9 +240,9 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   .screenbest__list .screenbest__item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -250,8 +256,9 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    max-width: 290px;
-    margin: 0 15px; }
+    margin: 0 22px;
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%; }
 
 .screenbest__item-img {
   width: 185px;
@@ -276,8 +283,7 @@ a {
   text-align: center;
   vertical-align: baseline;
   font-family: 'Lifehack-Medium', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 20px; }
+  font-size: 1.5rem; }
 
 .screenbest__item-content {
   font-family: 'ubuntulight', sans-serif;
@@ -287,29 +293,51 @@ a {
   line-height: 24px; }
 
 .screencomments {
-  background-color: #333; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #333;
+  height: 100vh; }
 
 .screencomments__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 0;
   padding: 0; }
   .screencomments__list .screencomments__item {
-    position: relative; }
+    position: relative;
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+    height: 50%; }
     .screencomments__list .screencomments__item:hover .screencomments__content {
       opacity: 1; }
-    .screencomments__list .screencomments__item .screencomments__avatar {
-      height: 50vh;
-      min-height: 325px;
-      display: block; }
+    .screencomments__list .screencomments__item:hover:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(69, 69, 69, 0.7);
+      position: absolute;
+      top: 0; }
+
+.screencomments__img {
+  width: 100%;
+  height: 100%; }
+
+.screencomments__avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; }
 
 .screencomments__content {
   position: absolute;
@@ -332,7 +360,29 @@ a {
   text-align: left; }
 
 .screencomments__button {
+  border-radius: 5px;
+  width: 97px;
+  height: 36px;
+  border: none;
+  background-color: #e45028;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'ubuntumedium', sans-serif;
+  font-size: 0.81rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
   background-color: #2f3234; }
+  .screencomments__button:hover {
+    color: burlywood; }
 
 .pagginator__list {
   position: fixed;

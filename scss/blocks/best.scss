@@ -4,9 +4,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 
-	
-	display: flex;
-align-items: center;
+
 
 
 }
@@ -15,7 +13,7 @@ align-items: center;
 	
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: center;
 
 }
 
@@ -24,7 +22,7 @@ align-items: center;
 	@include titlefont(#2f3234);
 	text-align: center;
 	margin-top: -50px;
-
+	
 
 }
 
@@ -32,19 +30,19 @@ align-items: center;
 .screenbest__list {
 	margin: 0;
 	padding: 0;
-
+	
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 
 	& .screenbest__item {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-
-
-		max-width: 290px;
-		margin: 0 15px;
+ 
+        margin: 0 22px;
+		flex-basis: 25%;
+		
 	}
 
 }
@@ -71,7 +69,7 @@ align-items: center;
 	vertical-align: baseline;
 	font-family: 'Lifehack-Medium', sans-serif;
 	font-size: 1.5rem;
-	margin-bottom: 20px;
+
 
 }
 

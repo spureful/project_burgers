@@ -1,59 +1,74 @@
 .screencomments {
+
+	display: flex;
+	justify-content: space-between;
 	background-color: #333;
-	
+
+	height: 100vh;
+
 }
 
 .screencomments__list {
 
 
+
 	display: flex;
-	align-content: stretch;
-	justify-content: center;
 	flex-wrap: wrap;
+
 
 	margin: 0;
 	padding: 0;
 
 
 	& .screencomments__item {
+
+
 		position: relative;
 
+		flex-basis: 25%;
+		height: 50%;
 
 
 		&:hover .screencomments__content {
 			opacity: 1;
 
-		} //	& .screencomments__img {
-		//
-		////		width: 275px;
-		////		min-height: 325px;
-		////		height: 50vh;
-		//		
-		//		
-		//
-		//	}
-		& .screencomments__avatar {
-//			max-width: 275px;
-			height: 50vh;
-			min-height: 325px;
-
-			display: block;
 		}
 
+		&:hover:before {
+			content: "";
+			display: block;
+
+			width: 100%;
+			height: 100%;
+
+			background-color: rgba(69, 69, 69, 0.7);
+			
+			position: absolute;
+			top:0;
+
+
+		}
 
 	}
 
 }
 
-//@each $screencommentsimg in (anna, constantin, alina, max, igor, elena, ivan, gena) {
-//	.screencomments__img_#{$screencommentsimg} {
-//		background: url(../../img/comments_screen/#{$screencommentsimg}.jpg) no-repeat center;
-//		background-size: cover;
-//	}
-//}
-.screencomments__content {
+.screencomments__img {
 
-//	width: 245px;
+	width: 100%;
+	height: 100%;
+}
+
+.screencomments__avatar {
+	display: flex;
+
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+}
+
+.screencomments__content {
 
 
 	position: absolute;
@@ -83,6 +98,6 @@
 }
 
 .screencomments__button {
-	@extend .button;
+	@include button;
 	background-color: #2f3234;
 }

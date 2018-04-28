@@ -14,3 +14,28 @@
 	text-transform: uppercase;
 
 }
+
+
+@mixin button {
+	
+	border-radius: 5px;
+
+	width: 97px;
+	height: 36px;
+//	text-align: center;
+	border: none;
+	background-color: #e45028;
+
+	cursor: pointer;
+	
+	    display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	@include menufont;
+
+	&:hover {
+		color: burlywood;
+	}
+
+}

@@ -18,7 +18,7 @@
 
 .header {
 
-		display: flex;
+	display: flex;
 	justify-content: space-around;
 	align-items: flex-start;
 
@@ -26,21 +26,26 @@
 
 .header__navigation {
 	display: flex;
-	align-items: center;
-	justify-content: space-around;
+	align-items: flex-end;
+
 
 }
 
 .menu__list {
+	display: flex;
 	
-	& .menu__item {
 
-		display: inline-block;
+	& .menu__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+
 		@include menufont;
 
 		&:after {
 			content: "•";
-			display: inline;
+			display: block;
 			color: #fff;
 
 
@@ -50,7 +55,7 @@
 
 		&:last-child:after {
 			content: "";
-			display: inline-block;
+			display: block;
 			color: #fff;
 		}
 	}
@@ -60,6 +65,10 @@
 		margin: 0 13px;
 
 
+
+		align-items: center;
+
+
 		&:hover {
 			color: #aaa;
 		}
@@ -67,32 +76,11 @@
 
 }
 
-.screenmeeting__anker {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.menu__item-link_button {
+	@include button;
 
 }
 
-.button {
-	
-	border-radius: 5px;
-
-	width: 97px;
-	height: 36px;
-	text-align: center;
-	border: none;
-	background-color: #e45028;
-
-	cursor: pointer;
-	
-	@include menufont;
-
-	&:hover {
-		color: burlywood;
-	}
-
-}
 
 //...................screenmeeting__block
 .screenmeeting__content {
@@ -102,7 +90,7 @@
 	justify-content: center;
 	align-items: center;
 
-	
+
 }
 
 .screenmeeting__content-img {
@@ -173,6 +161,3 @@
 	background-repeat: no-repeat;
 	margin: auto; //	margin-bottom: 30px;
 }
-
-
-
