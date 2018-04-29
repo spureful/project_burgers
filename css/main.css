@@ -52,7 +52,7 @@ a {
 
 .screenmeeting {
   background-color: black;
-  background-image: url(../../img/meeting_screen/bg.jpg);
+  background-image: url(../img/meeting_screen/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
 
@@ -209,9 +209,15 @@ a {
 
 .screenbest {
   background-color: #fff;
-  background-image: url(../../img/best_screen/bg.jpg);
+  background-image: url(../img/best_screen/bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .screenbest__container {
   -webkit-box-orient: vertical;
@@ -303,6 +309,7 @@ a {
   height: 100vh; }
 
 .screencomments__list {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
