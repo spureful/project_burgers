@@ -1,0 +1,137 @@
+.screenteam {
+	background-image: url(../img/team_screen/bg_team.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	position: relative;
+}
+
+.screenteam__container {
+	width: 49%;
+	min-height: 100vh;
+
+	background-color: rgba(47, 50, 52, 0.93);
+
+	position: absolute;
+	top: 0;
+	left: 51%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	
+}
+
+
+
+.screenteam__title-text {
+	@include titlefont($yellow);
+	padding-bottom: 40px;
+	margin-top: -30px;
+	margin-left: -50px;
+}
+
+
+
+.screenteam__item {
+	margin-bottom: 25px;
+}
+
+.screenteam__name {
+	font-family: 'Gagalin-Regular';
+	font-size: 0.875rem;
+	color: #fff;
+
+
+	text-transform: uppercase;
+
+	margin-left: 20px;
+	position: relative;
+
+	&:before {
+		content: "";
+		display: block;
+		width: 9px;
+		height: 7px;
+		background-image: url(../img/team_screen/arrow-down.png);
+		background-repeat: no-repeat;
+
+		position: absolute;
+		top: 5px;
+		left: -20px;
+	}
+}
+
+.screenteam__name_active {
+	color: $yellow;
+
+	&:before {
+		opacity: 0;
+	}
+	&:after {
+		content: "";
+		display: block;
+		width: 9px;
+		height: 7px;
+		background-image: url(../img/team_screen/arrow-up.png);
+		background-repeat: no-repeat;
+
+		position: absolute;
+		top: 5px;
+		left: -20px;
+	}
+
+	+ .screenteam__content {
+		height: 100%;
+	}
+}
+
+
+
+.screenteam__content {
+	margin-left: 20px;
+	padding-top: 10px;
+	
+	height: 0;
+	overflow: hidden;
+	
+	
+	display: flex;
+
+}
+
+
+
+
+
+.screenteam__avatar-img {
+	border-radius: 50%;
+	width: 6.25rem;
+	height: 6.25rem;
+
+	object-fit: cover;
+	
+
+}
+
+.screenteam__info {
+	padding-left: 20px;
+	
+	max-width: 230px;
+}
+
+.screenteam__position {
+	font-family: 'ubuntubold';
+	color: #fff;
+	font-size: 0.875rem;
+	text-transform: capitalize;
+	font-weight: 700;
+  
+	padding-bottom: 15px;
+}
+
+.screenteam__text {
+	@extend %contenttext;
+}
