@@ -639,8 +639,12 @@ a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%; }
+  .screenform__form .screenform__field {
+    margin-bottom: 10px; }
 
 .screenform__label-name {
   margin-bottom: 5px; }
