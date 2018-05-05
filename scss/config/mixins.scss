@@ -1,3 +1,7 @@
+@function rem($px){
+	@return $px/16px + 0rem;
+}
+
 @mixin titlefont($color) {
 	font-family: 'Gagalin-Regular', sans-serif;
 	font-size: 4.5rem;
@@ -20,17 +24,16 @@
 	
 	border-radius: 5px;
 
-	width: 97px;
-	height: 36px;
-//	text-align: center;
+
 	border: none;
+	padding: rem(8px) rem(15px);
 	background-color: #e45028;
 
 	cursor: pointer;
 	
-	    display: flex;
-	align-items: center;
-	justify-content: center;
+//	    display: flex;
+//	align-items: center;
+//	justify-content: center;
 	
 	@include menufont;
 
@@ -51,19 +54,19 @@
 
 @mixin screenformfield($width){
 	width: $width;
-	height: 35px;
+	height: rem(35px);
 	
 	background-color: #fff;
 	border-radius: 5px;
 	border: none;
 	
-	padding-left: 15px;
+	padding-left: rem(15px);
 } 
 
 	
 	%screenformtext {
 	color: #2f3234;
-	padding-left: 20px;
+	padding-left: rem(20px);
 	text-transform: capitalize;
 	box-sizing:border-box;
 
@@ -73,6 +76,17 @@
 }
 	
 	
+@mixin tablet {
+	@media screen and (max-width: 945px) {
+		@content;
+	}
+}
 
+@mixin phone {
+	@media screen and (max-width: 490px) {
+		@content;
+	}
+}
+	
 	
 	

@@ -4,8 +4,6 @@
 	justify-content: space-between;
 	background-color: #333;
 
-	height: 100vh;
-
 
 }
 
@@ -47,9 +45,17 @@ width: 100%;
 			position: absolute;
 			top:0;
 
+//			@include tablet {
+//				padding-top: 6%;
+//			}
 
 		}
 
+		
+		@include tablet {
+			flex-basis: 50%;
+			height: 25%;
+		}
 	}
 
 }
@@ -73,11 +79,15 @@ width: 100%;
 
 
 	position: absolute;
-	top: 50px;
-	left: 20px;
+	top: rem(50px);
+	left: rem(20px);
 
 
 	opacity: 0;
+	
+	@include tablet {
+		top:15%;
+	}
 
 }
 
@@ -85,7 +95,7 @@ width: 100%;
 	font-family: 'Gagalin-Regular', sans-serif;
 	font-size: 0.875rem;
 	color: #fff;
-	margin-bottom: 20px;
+	margin-bottom: rem(20px);
 	font-weight: normal;
 }
 
@@ -93,7 +103,7 @@ width: 100%;
 	font-family: 'ubuntulight', sans-serif;
 	font-size: 0.875rem;
 	color: #fff;
-	line-height: 20px;
+	line-height: rem(20px);
 	text-align: left;
 
 }

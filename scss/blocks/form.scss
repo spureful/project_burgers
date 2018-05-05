@@ -18,7 +18,11 @@
 
 .screenform__title-text {
 	@include titlefont($yellow);
-		margin-bottom: 20px;
+	margin-top: rem(-30px);
+		margin-bottom: rem(50px);
+	@include phone {
+		text-align: center;
+	}
 }
 
 .screenform__form {
@@ -27,9 +31,26 @@
 	display: flex;
 justify-content: space-between;
 	
-	.screenform__base {
-		max-width: 461px;
-		margin-right: 20px;
+	.screenform__row {
+		display: flex;
+		width: 100%;
+		margin-bottom: rem(17px);
+		
+		@include phone {
+			justify-content: center;
+		}
+	}
+	
+	.screenform__row_phone {
+		@include phone {
+			margin-bottom: rem(35px);
+		}
+	}
+	
+	.screenform__column {
+		width: 100%;
+		max-width: rem(461px);
+		margin-right: rem(20px);
          display: flex;
 		
 		flex-wrap: wrap;
@@ -37,129 +58,60 @@ justify-content: space-between;
 		align-content: flex-start;
 		
 		flex-basis: 50%;
+		
+		@include phone {
+			margin-right: 0;
+		}
 	}
 	
 	.screenform__field {
-		margin-bottom: 10px;
+	
+		margin-right: rem(20px);
+		flex:1;
+		
+		&:last-child {
+			margin-right: 0;
+		}
 	}
+	
+	@include tablet {
+		flex-direction: column;
+	}
+	
+	
 }
+
 
 .screenform__label-name{
 	@extend %contenttext;
-	margin-bottom: 5px;
+	margin-bottom: rem(10px);
+	
 	
 }
 
-.screenform__field-name {
-	@include screenformfield(221px);
-	
-}
-
-.screenform__label-phone{
-	@extend %contenttext;
-	margin-bottom: 5px;
-}
-
-.screenform__field-phone {
-	@include screenformfield(221px);
-	
-}
-
-.screenform__label-street{
-	@extend %contenttext;
-	margin-bottom: 5px;
-}
-
-.screenform__field-street {
-	@include screenformfield(460px);
+.screenform__field-item {
+	@include screenformfield(100%);
 	
 }
 
 
-.screenform__label-house{
-	@extend %contenttext;
-	margin-bottom: 5px;
-}
-
-.screenform__field-house {
-	@include screenformfield(100px);
-	
-}
-
-
-.screenform__label-corpus{
-	@extend %contenttext;
-	margin-bottom: 5px;
-	text-transform: capitalize;
-}
-
-.screenform__field-corpus {
-	@include screenformfield(100px);
-	
-}
-
-.screenform__label-flat{
-	@extend %contenttext;
-	margin-bottom: 5px;
-}
-
-.screenform__field-flat {
-	@include screenformfield(100px);
-	
-}
-
-.screenform__label-floor{
-	@extend %contenttext;
-	margin-bottom: 5px;
-}
-
-.screenform__field-floor {
-	@include screenformfield(100px);
-	
-}
-
-.screenform__other{
-	max-width: 461px;
-	
-	display: flex;
-		flex-direction: column;
-		
-	
-		flex-basis: 50%;
-	
-}
 
 .screenform__field-comment {
-	@include screenformfield(460px);
-	min-height: 110px;
+	@include screenformfield(100%);
+	min-height: rem(110px);
 	
-	padding: 15px;
+	padding: rem(15px);
 	
 resize: none;
 	
 	
 }
 
-.screenform__label-comment {
-	@extend %contenttext;
-	margin-bottom: 5px;
-}
-
-.screenform__radiobuttons {
-	margin-bottom: 30px;
-}
 
 .screenform__radio {
-	margin-right: 10px;
+	margin-right: rem(10px);
 }
-.screenform__radiocustom {
-	display: inline-block;
-	margin-right: 5px;
-}
-.screenform__label-radio {
-	@extend %contenttext;
-	
-}
+
 
 .screenform__radio-item {
 	display: none;
@@ -172,17 +124,20 @@ resize: none;
 }
 
 .screenform__radiocustom {
-	width: 15px;
-	height: 15px;
+	width: rem(15px);
+	height: rem(15px);
 	border-radius: 50%;
 	background-color: #fff;
+	
+	display: inline-block;
+	margin-right: rem(5px);
 	
 	position: relative;
 	
 	&:before {
 		content: "";
-		width: 7px;
-		height: 7px;
+		width: rem(7px);
+		height: rem(7px);
 		border-radius: 50%;
 		background-color: #e35028;
 		
@@ -196,9 +151,7 @@ resize: none;
 	
 }
 
-.screenform__checkboxblock { 
-margin-bottom: 20px;
-}
+
 .screenform__checkbox-item {
 	display: none;
 	
@@ -214,15 +167,16 @@ margin-bottom: 20px;
 .screenform__checkboxcustom {
 	position: relative;
 	
+	margin-right: rem(5px);
 	display: inline-block;
-	width: 15px;
-	height: 15px;
+	width: rem(15px);
+	height: rem(15px);
 	background-color: #fff;
 	
 	&:before {
 		content: "";
-		width: 11px;
-		height: 9px;
+		width: rem(11px);
+		height: rem(9px);
 		
 		background-image: url(../img/form_screen/check.png);
 		
@@ -235,17 +189,11 @@ margin-bottom: 20px;
 	}
 }
 
-.screenform__label-checkbox {
-	@extend %contenttext;
-	
-}
-.screenform__buttons {
-	display: flex;
-}
+
 
 .screenform__button-order {
 	@include button;
-	margin-right: 20px;
+	margin-right: rem(20px);
 }
 
 

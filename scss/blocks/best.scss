@@ -4,16 +4,22 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 
-  
-display: flex;
+
+	display: flex;
 	align-items: center;
 }
 
 .screenbest__container {
 
+
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
+
+	@include phone {
+		align-content: center;
+	}
+
 
 }
 
@@ -21,8 +27,13 @@ display: flex;
 
 	@include titlefont(#2f3234);
 	text-align: center;
-	margin-top: -50px;
-
+   
+	margin-top: rem(110px);
+	margin-bottom: rem(40px);
+	
+	@include phone {
+		margin-bottom: rem(50px);
+	}
 
 }
 
@@ -34,23 +45,53 @@ display: flex;
 	display: flex;
 	justify-content: center;
 
+	@include phone {
+		flex-direction: column;
+	}
+
 	& .screenbest__item {
 		display: flex;
+		flex-wrap: wrap;
 		flex-direction: column;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 
-		margin: 0 22px;
+		margin-right: 5%;
 		flex-basis: 25%;
 
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@include phone {
+
+			flex-wrap: nowrap;
+			flex-direction: row;
+
+			margin-bottom: rem(50px);
+			padding: 0 rem(15px);
+			
+		}
+
 	}
+
+
 
 }
 
 .screenbest__item-img {
 
-	width: 185px;
-	min-height: 150px;
+	width: rem(115px);
+	height: rem(105px);
+
+	@include phone {
+
+		margin-right: rem(20px);
+		flex: 0 0 auto;
+
+	}
+
 }
 
 @each $screenbestimg in (meat, hand, natural) {
@@ -63,6 +104,12 @@ display: flex;
 
 }
 
+.screenbest__item-row {
+	@include phone {
+		text-align: left;
+	}
+}
+
 .screenbest__item-title {
 
 	text-align: center;
@@ -70,6 +117,11 @@ display: flex;
 	font-family: 'Lifehack-Medium', sans-serif;
 	font-size: 1.5rem;
 
+
+	@include phone {
+		text-align: left;
+		margin-bottom: rem(25px);
+	}
 
 }
 
@@ -79,7 +131,11 @@ display: flex;
 	color: rgba(47, 50, 52, 0.8);
 	font-size: 0.8rem;
 	text-align: justify;
-	line-height: 24px;
+	line-height: rem(24px);
+
+	@include phone {
+		text-align: left;
+	}
 
 
 }

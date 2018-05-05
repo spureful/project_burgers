@@ -20,7 +20,11 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
+ 
+	@include tablet {
+			left: 0;
+		width: 100%;
+	}
 	
 }
 
@@ -28,15 +32,21 @@
 
 .screenteam__title-text {
 	@include titlefont($yellow);
-	padding-bottom: 40px;
-	margin-top: -30px;
-	margin-left: -50px;
+	padding-bottom: rem(40px);
+	margin-top: rem(-30px);
+	margin-left: rem(-50px);
 }
 
 
 
 .screenteam__item {
-	margin-bottom: 25px;
+	margin-bottom: rem(25px);
+	
+	@include tablet {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .screenteam__name {
@@ -47,40 +57,36 @@
 
 	text-transform: uppercase;
 
-	margin-left: 20px;
+	margin-left: rem(20px);
 	position: relative;
 
 	&:before {
 		content: "";
 		display: block;
-		width: 9px;
-		height: 7px;
-		background-image: url(../img/team_screen/arrow-down.png);
-		background-repeat: no-repeat;
-
+		border: 5px solid transparent;
+		border-top: 6px solid $yellow;
+	
+		
 		position: absolute;
-		top: 5px;
-		left: -20px;
+		top: rem(7px);
+		left: rem(-20px);
 	}
+	
+	@include tablet {
+		margin-bottom: rem(10px);
+	}
+	
+	@include phone {
+		font-size: rem(25px);
+}
 }
 
 .screenteam__name_active {
 	color: $yellow;
 
 	&:before {
-		opacity: 0;
-	}
-	&:after {
-		content: "";
-		display: block;
-		width: 9px;
-		height: 7px;
-		background-image: url(../img/team_screen/arrow-up.png);
-		background-repeat: no-repeat;
-
-		position: absolute;
-		top: 5px;
-		left: -20px;
+		transform: rotate(180deg);
+		top: rem(3px);
 	}
 
 	+ .screenteam__content {
@@ -91,8 +97,8 @@
 
 
 .screenteam__content {
-	margin-left: 20px;
-	padding-top: 10px;
+	margin-left: rem(20px);
+	padding-top: rem(10px);
 	
 	height: 0;
 	overflow: hidden;
@@ -100,6 +106,17 @@
 	
 	display: flex;
 
+	
+	@include tablet {
+		margin-top: rem(10px);
+
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+
+		margin: 0;
+		padding: 0;
+	}
 }
 
 
@@ -113,13 +130,16 @@
 
 	object-fit: cover;
 	
-
+	@include tablet{
+		margin: 0 auto;
+	}
+	
 }
 
 .screenteam__info {
-	padding-left: 20px;
+	padding-left: rem(20px);
 	
-	max-width: 230px;
+	max-width: rem(230px);
 }
 
 .screenteam__position {
@@ -129,7 +149,12 @@
 	text-transform: capitalize;
 	font-weight: 700;
   
-	padding-bottom: 15px;
+	padding-bottom: rem(15px);
+	
+	@include tablet {
+		text-align: center;
+	}
+	
 }
 
 .screenteam__text {
