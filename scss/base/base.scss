@@ -9,7 +9,7 @@ body {
 	}
 	
 	@include phone {
-		font-size: 16px;
+		font-size: 13px;
 	}
 	
 }
@@ -52,6 +52,10 @@ a {
 	height: 100%;
 
 	margin: 0 auto;
+	
+	@include minimal {
+		width: 320px;
+	}
 }
 
 
@@ -66,7 +70,6 @@ a {
 
 .screen {
 
-
 	min-height: 100vh;
 		margin: 0 auto;
 
@@ -78,5 +81,7 @@ a {
 	margin: 0 auto;
 	display: flex;
 	min-height: 650px;
+	
+
 
 }

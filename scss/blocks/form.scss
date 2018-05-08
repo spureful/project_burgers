@@ -18,9 +18,9 @@
 
 .screenform__title-text {
 	@include titlefont($yellow);
-	margin-top: rem(-30px);
+//	margin-top: rem(-30px);
 		margin-bottom: rem(50px);
-	@include phone {
+	@include tablet {
 		text-align: center;
 	}
 }

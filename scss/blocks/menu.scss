@@ -15,7 +15,9 @@
 	padding-top: 8%;
 	padding-left: 8%;
 
-
+	@include phone {
+		font-size: 3.85rem;
+	}
 }
 
 
@@ -33,7 +35,8 @@ justify-content: flex-end;
 	@include tablet {
 		width: 100%;
 	}
-				
+			
+	
 }
 
 
@@ -55,7 +58,11 @@ justify-content: flex-end;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
+		
 
+		@include phone {
+			max-width: rem(70px);
+		}
 	}
 
 	&:first-child .screenmenu__position {
@@ -89,6 +96,8 @@ justify-content: flex-end;
 .screenmenu__position-block {
 	
 	transform: rotate(270deg);
+	background-color: transparent;
+	border:none;
  
 }
 
@@ -109,7 +118,7 @@ justify-content: flex-end;
 
 .screenmenu__content {
 	min-height: 100vh;
-	width: 75%;
+//	width: 75%;
 	background-color: rgba(76, 78, 80, 0.93);
 	
 	width: 0;
@@ -125,17 +134,23 @@ justify-content: flex-end;
 	
 	}
 
-.screenmenu__position_active {
-	+.screenmenu__content {
-		width: 78%;
+//.screenmenu__position_active {
+//	+.screenmenu__content {
+//		width: 78%;
+//		@include tablet {
+//			width: 100%;
+//		}
+//	}
+	
+//	.screenmenu__position-title {
+//		color: $yellow;
+//			
+
+//	}
+//}
+
+.screenmenu__content-active {
+		width: 100%;
 		@include tablet {
 			width: 100%;
-		}
-	}
-	
-	.screenmenu__position-title {
-		color: $yellow;
-			
-
-	}
-}
+	}}
