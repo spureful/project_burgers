@@ -16,7 +16,7 @@ function openMenu() {
 
 	closeBtn.addEventListener('click', function(){
 		menu.fadeOut().removeClass('hamburgermenu_visible');
-		wrapper.style.oveflow ='visible';
+		wrapper.style.oveflow = 'none';
 	});
 	
 	}

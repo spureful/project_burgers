@@ -35,6 +35,10 @@
 	padding-bottom: rem(40px);
 	margin-top: rem(-30px);
 	margin-left: rem(-50px);
+	@include phone {
+		margin: 0;
+		text-align: center;
+	}
 }
 
 

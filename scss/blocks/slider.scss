@@ -1,0 +1,46 @@
+.screenslider {
+	background-image:linear-gradient(#f9b43b, #eb8c38, #f9b43b, );
+}
+
+.screenslider__arrow-left {
+	width: 28px;
+	height: 25px;
+	background-image: url(../img/icons/arrow-scroll.svg);
+	background-repeat: no-repeat;
+	transform: rotate(90deg);
+}
+
+
+.screenslider__image {
+position: relative;	
+}
+
+.screenslider__img {
+	width: rem(505px);
+	height: rem(329px);
+	background-image: url(../img/slider_screen/black_burger.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.screenslider__icon{
+	fill: #fff;
+	color: #fff;
+	font-size: 16px;
+}
+
+
+.screenslider__title {
+@include titlefont(#fff);	
+	
+}
+
+.screenslider__text {
+	@extend %contenttext;
+	line-height: 1.7em;
+}
+.screenslider__arrow-right {
+	@extend .screenslider__arrow-left;
+	transform: rotate(270deg);
+}
+

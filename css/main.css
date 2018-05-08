@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.hamburgermenu, .screenteam__text, .screenmenu__content-text, .screenform__label-name, .screenform__button-clear, .footer__contacts-adress {
+.hamburgermenu, .screenslider__text, .screenteam__text, .screenmenu__content-text, .screenform__label-name, .screenform__button-clear, .footer__contacts-adress {
   font-family: 'ubuntulight', sans-serif;
   color: #fff;
   font-size: 0.875rem;
@@ -444,6 +444,47 @@ a {
     .screenbest__item-content {
       text-align: left; } }
 
+.screenslider {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f9b43b), color-stop(#eb8c38), to(#f9b43b));
+  background-image: linear-gradient(#f9b43b, #eb8c38, #f9b43b); }
+
+.screenslider__arrow-left, .screenslider__arrow-right {
+  width: 28px;
+  height: 25px;
+  background-image: url(../img/icons/arrow-scroll.svg);
+  background-repeat: no-repeat;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg); }
+
+.screenslider__image {
+  position: relative; }
+
+.screenslider__img {
+  width: 31.5625rem;
+  height: 20.5625rem;
+  background-image: url(../img/slider_screen/black_burger.png);
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.screenslider__icon {
+  fill: #fff;
+  color: #fff;
+  font-size: 16px; }
+
+.screenslider__title {
+  font-family: 'Gagalin-Regular', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff; }
+
+.screenslider__text {
+  line-height: 1.7em; }
+
+.screenslider__arrow-right {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg); }
+
 .screenteam {
   background-image: url(../img/team_screen/bg_team.jpg);
   background-repeat: no-repeat;
@@ -484,6 +525,10 @@ a {
   padding-bottom: 2.5rem;
   margin-top: -1.875rem;
   margin-left: -3.125rem; }
+  @media screen and (max-width: 490px) {
+    .screenteam__title-text {
+      margin: 0;
+      text-align: center; } }
 
 .screenteam__item {
   margin-bottom: 1.5625rem; }
@@ -691,7 +736,8 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #333; }
+  background-color: #333;
+  height: 100%; }
 
 .screencomments__list {
   width: 100%;
