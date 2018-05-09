@@ -25,21 +25,49 @@ function openMenu() {
 
 openMenu();
 
-function openPosition(){
-	const openPos = document.querySelector('.screenmenu__position');
-	const posContent = $('.screenmenu__content');
+
+
+function openComposition() {
+	var openBtn = document.querySelector(".screenslider__productcontent");
+	var appearMenu = document.querySelector(".screenslider__composition");
+	var closeBtn = document.querySelector(".screenslider__productcontent");
+	let op = 0;
 	
-	const closePos = document.querySelector('.screenmenu__position');
+	openBtn.addEventListener("click", function(){
+		appearMenu.classList.toggle("screenslider__composition_active")
+		
+	openBtn.style.backgroundColor = "#e35028";
+
+	});
+	
+	setTimeout (function foo(){
+		if (op < 1){
+			appearMenu.style.opacity = op;
+			op += 0.1;
+			setTimeout(foo, 100);
+		}
+	}, 100);
+	
+
+	
+	}
+	
+
+openComposition();
+
+
+function openPosition(){
+	const openPos = document.querySelectorAll('.screenmenu_accordeon>.screenmenu__item');
+	const posContent = document.querySelector('.screenmenu__content');
+	
+	
 	
 	
 	openPos.addEventListener('click', function(){
-//		posContent.fadeIn();
-		posContent.addClass('screenmenu__content-active');
+
+		posContent.classList.toggle('screenmenu__content-active');
 	});
-	
-//	closePos.addEventListener('click', function(){
-//			posContent.removeClass('screenmenu__content-active');
-//	})
+
 };
 
 
