@@ -57,19 +57,22 @@ openComposition();
 
 
 function openPosition(){
-	const openPos = document.querySelector('.screenmenu__item');
-	const posContent = $('.screenmenu__content');
+	const openPos = document.querySelector('.screenmenu_accordeon');
+	const posContent = document.querySelector('.screenmenu__content');
 	
 	
 	
-	
-	openPos.addEventListener('click', function(){
+	openPos.addEventListener('click', function(event){
+		if( event.target.className = "screenmenu__position-btn"){
+			posContent.classList.toggle('screenmenu__content-active');
+		};
 
-		posContent.fadeIn();
-		posContent.toggleClass('screenmenu__content-active');
+		
+//		posContent.fadeIn();
+//		posContent.toggleClass('screenmenu__content-active');
 	});
-
-};
+	};
+//};
 
 
 openPosition()
@@ -85,11 +88,20 @@ function commentsPopup() {
 	const closePop = document.querySelector('.screencomments__popup-close');
 	let op = 0;
 	
-	openPop.addEventListener('click', function(){
-		popup.classList.add('screencomments__popup_active');
-	});
 	
-	namePopup.contentText= name.contentText;
+	
+//	for(var i=0; i< openPop.length; i++){
+	openPop.addEventListener('click', function(){
+		console.log(openPop.length);
+		popup.classList.add('screencomments__popup_active');
+		
+		namePopup.textContent = name.innerHTML;
+		commentPopup.textContent = comment.innerHTML;
+	});
+//	}
+	
+	
+	
 	closePop.addEventListener('click', function(){
 		popup.classList.remove('screencomments__popup_active');
 	});
