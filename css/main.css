@@ -281,7 +281,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #2f3234;
   text-transform: uppercase;
   color: #fff;
   -webkit-transition: opacity 0.5s;
@@ -327,9 +327,9 @@ a {
   background-size: contain; }
 
 .hamburgermenu__close {
-  width: 15px;
+  width: 18px;
   height: 3px;
-  background-color: grey;
+  background-color: #bfc0c1;
   border-radius: 3px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -340,9 +340,9 @@ a {
   .hamburgermenu__close:before {
     content: '';
     display: block;
-    width: 15px;
+    width: 18px;
     height: 3px;
-    background-color: grey;
+    background-color: #bfc0c1;
     border-radius: 3px;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
@@ -350,7 +350,7 @@ a {
     top: 0px;
     left: 0px; }
   .hamburgermenu__close:hover {
-    width: 15px;
+    width: 18px;
     height: 3px;
     background-color: #fff;
     border-radius: 3px;
@@ -361,7 +361,7 @@ a {
     .hamburgermenu__close:hover:before {
       content: '';
       display: block;
-      width: 15px;
+      width: 18px;
       height: 3px;
       background-color: #fff;
       border-radius: 3px;
@@ -377,7 +377,9 @@ a {
   font-weight: 600;
   color: #fff;
   text-transform: uppercase;
-  text-align: center; }
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400; }
   .hamburgermenu__link:hover {
     color: red; }
 
@@ -394,7 +396,9 @@ a {
     background-color: #fff;
     position: absolute;
     left: 50%;
-    top: 1.5625rem; }
+    top: 150%; }
+  .hamburgermenu__item:last-child:after {
+    display: none; }
 
 .screenbest {
   background-color: #fff;
@@ -535,6 +539,7 @@ a {
 .screenslider {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9b43b), color-stop(#eb8c38), to(#f9b43b));
   background-image: linear-gradient(#f9b43b, #eb8c38, #f9b43b);
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -544,17 +549,23 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 4%;
+  width: 100%;
+  padding: 2%;
   position: relative; }
 
 .screenslider__arrow-left, .screenslider__arrow-right {
-  width: 28px;
-  height: 25px;
+  width: 20px;
+  height: 10px;
   background-image: url(../img/icons/arrow-scroll.svg);
   background-repeat: no-repeat;
   background-size: contain;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg); }
+  @media screen and (max-width: 490px) {
+    .screenslider__arrow-left, .screenslider__arrow-right {
+      position: absolute;
+      top: 50%;
+      left: 2%; } }
 
 .screenslider__block {
   display: -webkit-box;
@@ -825,8 +836,7 @@ a {
 .screenslider__arrow-right {
   -webkit-transform: rotate(270deg);
           transform: rotate(270deg);
-  right: 3%;
-  left: 0; }
+  left: 94%; }
 
 .screenteam {
   background-image: url(../img/team_screen/bg_team.jpg);
@@ -1070,11 +1080,18 @@ a {
   line-height: 1.5rem;
   padding: 3.125rem 1.875rem; }
 
-.screenmenu__content-active {
-  width: 100%; }
+.screenmenu__position_active + .screenmenu__content {
+  width: 78%; }
   @media screen and (max-width: 945px) {
-    .screenmenu__content-active {
+    .screenmenu__position_active + .screenmenu__content {
       width: 100%; } }
+.screenmenu__position_active .screenmenu__position-title {
+  color: #f9b43b; }
+
+.screenmenu__item_active .screenmenu__position-title {
+  color: #f9b43b; }
+.screenmenu__item_active .screenmenu__content {
+  width: 100%; }
 
 .screencomments {
   display: -webkit-box;
@@ -1254,7 +1271,7 @@ a {
           justify-content: space-between; }
 
 .screencomments__popup-close {
-  width: 15px;
+  width: 18px;
   height: 3px;
   background-color: red;
   border-radius: 3px;
@@ -1265,7 +1282,7 @@ a {
   .screencomments__popup-close:before {
     content: '';
     display: block;
-    width: 15px;
+    width: 18px;
     height: 3px;
     background-color: red;
     border-radius: 3px;
@@ -1489,10 +1506,7 @@ a {
 .screencontacts__map {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  background-image: url(../img/contacts_screen/map.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; }
+          flex: 1 0 auto; }
 
 .footer {
   background-color: #0b0b0b;

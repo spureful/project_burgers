@@ -76,7 +76,7 @@
 }
 	
 @mixin closebtn($bgc){
-	width: 15px;
+	width: 18px;
 	height: 3px;
 	background-color: $bgc;
 	border-radius: 3px;
@@ -86,7 +86,7 @@
 	&:before {
 		content:'';
 		display: block;
-		width: 15px;
+		width: 18px;
 	height: 3px;
 	background-color: $bgc;
 	border-radius: 3px;

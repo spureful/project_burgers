@@ -144,23 +144,32 @@ justify-content: flex-end;
 	
 	}
 
-//.screenmenu__position_active {
-//	+.screenmenu__content {
-//		width: 78%;
-//		@include tablet {
-//			width: 100%;
-//		}
-//	}
-	
-//	.screenmenu__position-title {
-//		color: $yellow;
-//			
-
-//	}
-//}
-
-.screenmenu__content-active {
-		width: 100%;
+.screenmenu__position_active {
+	+.screenmenu__content {
+		width: 78%;
 		@include tablet {
 			width: 100%;
-	}}
+		}
+	}
+	
+	.screenmenu__position-title {
+		color: $yellow;
+			
+
+	}
+}
+
+//.screenmenu__content-active {
+//		width: 100%;
+//		@include tablet {
+//			width: 100%;
+//	}}
+
+.screenmenu__item_active {
+	.screenmenu__position-title {
+		color: $yellow;
+	}
+	.screenmenu__content {
+		width: 100%;
+	}
+}
