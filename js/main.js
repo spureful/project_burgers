@@ -57,13 +57,13 @@ openComposition();
 
 function openPosition() {
 	const openPos = document.getElementsByClassName('screenmenu__position-btn');
-	const posContent = document.querySelector('.screenmenu__position');
+	const posContent = document.querySelector ('.screenmenu__item');
 
 
 	for (var i = 0; i < openPos.length; i++) {
 		openPos[i].addEventListener('click', function () {				
 			
-			posContent.classList.toggle('screenmenu__position_active')
+			posContent.classList.toggle('screenmenu__item_active')
 			});
 
 		
