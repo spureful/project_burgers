@@ -14,8 +14,9 @@ function openMenu() {
 	});
 
 	closeBtn.addEventListener('click', function () {
-		menu.fadeOut().removeClass('hamburgermenu_visible');
-		wrapper.style.overflow = 'none';
+		menu.fadeOut();
+		menu.removeClass('hamburgermenu_visible');
+		wrapper.style.overflow = 'visible';
 	});
 
 }
@@ -55,30 +56,30 @@ function openComposition() {
 openComposition();
 
 
-function openPosition() {
-	const openPos = document.getElementsByClassName('screenmenu__position-btn');
-	const posContent = document.querySelector ('.screenmenu__item');
-
-
-	for (var i = 0; i < openPos.length; i++) {
-		openPos[i].addEventListener('click', function () {				
-			
-			posContent.classList.toggle('screenmenu__item_active')
-			});
-
-		
-	};
-}
-
-
-openPosition();
+//function openPosition() {
+//	const openPos = document.getElementsByClassName('screenmenu__position-btn');
+//	const posContent = document.querySelector ('.screenmenu__item');
+//
+//
+//	for (var i = 0; i < openPos.length; i++) {
+//		openPos[i].addEventListener('click', function () {				
+//			
+//			posContent.classList.toggle('screenmenu__item_active')
+//			});
+//
+//		
+//	};
+//}
+//
+//
+//openPosition();
 
 
 function commentsPopup() {
-	var name = document.querySelector('.screencomments__title');
-	var namePopup = document.querySelector('.screencomments__popup-name');
-	var comment = document.querySelector('.screencomments__text');
-	var commentPopup = document.querySelector('.screencomments__popup-content');
+	const name = document.querySelector('.screencomments__title');
+	const namePopup = document.querySelector('.screencomments__popup-name');
+	const comment = document.querySelector('.screencomments__text');
+	const commentPopup = document.querySelector('.screencomments__popup-content');
 	const openPop = document.querySelector('.screencomments__button');
 	const popup = document.querySelector('.screencomments__popup');
 	const closePop = document.querySelector('.screencomments__popup-close');
