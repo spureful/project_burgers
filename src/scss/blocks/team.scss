@@ -90,7 +90,7 @@
 }
 }
 
-.screenteam__item-block_active {
+.screenteam__item_active {
 	
 	.screenteam__name {
 	color: $yellow;
@@ -100,7 +100,7 @@
 		top: rem(3px);
 	}
 	}
-	+ .screenteam__content {
+	 .screenteam__content {
 		height: 100%;
 	}
 }
