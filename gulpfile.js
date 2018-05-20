@@ -12,7 +12,13 @@ const cssunit = require('gulp-css-unit');
 gulp.task('sass', function(){
     return gulp.src(`./src/scss/*.scss`)
     .pipe(sass())
-    .pipe(gulp.dest(`./build/css`));
+	 .pipe(autoprefixer({
+            browsers: ['last 5 versions'],
+            cascade: false
+        }))
+  
+		.pipe(gulp.dest(`./build/css`));
+	
 });
 
 
@@ -24,35 +30,16 @@ gulp.task('imagemin', function() {
         .pipe(gulp.dest(`./build/img`))
 });
 
-gulp.task('autoprefix', function() {
-    gulp.src(`./build/css/*.css`)
-        .pipe(autoprefixer({
-            browsers: ['last 5 versions'],
-            cascade: false
-        }))
-        .pipe(gulp.dest(`./build/css`))
-});
 
-gulp.task('pxtorem',function(){
-   
-    gulp.src(`./build/css/*.css`)
-        .pipe(cssunit({
-            type     :    'px-to-rem',
-            rootSize :    16
-        }))
-        .pipe(gulp.dest(`./build/css`));
-    
-});
 
 gulp.task('clean', function(){
     delete(`./build/`);
 });
 
 gulp.task('watch', function(){
-  watch(`src/scss/*.scss`, function() {
+  watch([`src/scss/*/*.scss`, `src/scss/*.scss`], function() {
      gulp.start('sass'); 
-	   gulp.start('autoprefix');
-	   gulp.start('pxtorem');
+	 
   });
 });
 
@@ -61,10 +48,8 @@ gulp.task('default', function(){
 runSequence (
     
     'clean',
+	  'sass',
 	
-    'sass',
-	'pxtorem',
-	'autoprefix'	
 		
 )
 });

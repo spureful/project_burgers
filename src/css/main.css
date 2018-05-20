@@ -1701,11 +1701,6 @@ a {
       display: none; } }
 
 .test {
-  background-color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 10px;
-  height: 500px; }
+  background-color: #fff; }
 
 /*# sourceMappingURL=main.css.map */
