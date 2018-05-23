@@ -21,28 +21,28 @@
 
 		<div class="maincontent">
 
-			<section class="screen screenmeeting" id="screenmeeting">
+			<section class="screen screenmeeting screenactive" id="screenmeeting">
 
 				<div class="container screenmeeting__container">
 					<header class="header ">
-						<div class="header__logo"><img src="img/icons/logo.svg" alt="Логотип" class="header__logo-img"></div>
+						<div class="logo"><img src="img/icons/logo.svg" alt="Логотип" class="logo-img"></div>
 
 						<div class="header__navigation">
 							<nav class="menu">
 								<ul class="menu__list">
 									<li class="menu__item">
-										<a href="#screenbest" class="menu__item-link">о нас</a></li>
-									<li class="menu__item"><a href="#screenslider" class="menu__item-link">бургеры</a></li>
-									<li class="menu__item"><a href="#screenteam" class="menu__item-link">команда</a></li>
-									<li class="menu__item"><a href="#screenmenu" class="menu__item-link">меню</a></li>
-									<li class="menu__item"><a href="#screencomments" class="menu__item-link">отзывы</a></li>
-									<li class="menu__item"><a href="#screencontacts" class="menu__item-link">контакты</a></li>
+										<a href="#screenbest" class="menu__item-link" data-scroll-to='1'>о нас</a></li>
+									<li class="menu__item"><a href="#screenslider" class="menu__item-link" data-scroll-to='2'>бургеры</a></li>
+									<li class="menu__item"><a href="#screenteam" class="menu__item-link" data-scroll-to='3'>команда</a></li>
+									<li class="menu__item"><a href="#screenmenu" class="menu__item-link" data-scroll-to='4'>меню</a></li>
+									<li class="menu__item"><a href="#screencomments" class="menu__item-link" data-scroll-to='5'>отзывы</a></li>
+									<li class="menu__item"><a href="#screencontacts" class="menu__item-link" data-scroll-to='7'>контакты</a></li>
 
 								</ul>
 
 							</nav>
 							<a href="#screenform" class="menu__item-link  menu__item-link_button
-">заказать</a>
+" data-scroll-to='6'>заказать</a>
 							<a href="#" class="menu__hamburger">
 								<div class="menu__hamburger-items"></div>
 							</a>
@@ -61,7 +61,7 @@
 					</div>
 
 
-					<div class="screenmeeting_arrow"> <a href="" class="screenmeeting_arrow-link"> </a>
+					<div class="screenmeeting_arrow"> <a href="#screenbest" class="screenmeeting_arrow-link"> </a>
 					</div>
 				</div>
 
@@ -70,7 +70,7 @@
 			<div class="hamburgermenu">
 
 				<div class="hamburgermenu__header">
-					<div class="hamburgermenu__logo"></div>
+					<div class="logo"><img src="img/icons/logo.svg" alt="Логотип" class="logo-img"></div>
 
 					<div class="hamburgermenu__close"></div>
 				</div>
@@ -205,7 +205,7 @@
 							<div class="screenslider__kkal">
 								<svg class="screenslider__icon screenslider__icon-kkal" width="60" height="60">
 				 <text x="13" y="45" fill="#fff" font-size="20"   
-  font-family='Gagalin-Regular'>1200</text>
+  font-family='Gagalin-Regular' class = "screenslider__svgtext">1200</text>
 						<use xlink:href="img/icons/sprite.svg#kkal">	  </use>
 						
 					</svg>
@@ -513,7 +513,7 @@
 							<p class="screenslider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
 							<div class="screenslider__row">
 								<div class="screenslider__price"> 500<span class="screenslider__price-text">рублей</span></div>
-								<a href="#screenform" class="screenslider__order">заказать</a>
+								<a href="#screenform" class="screenslider__order" data-scroll-to='6'>заказать</a>
 							</div>
 						</div>
 					</li>
@@ -544,7 +544,7 @@
 						<li class="screenteam__item">
 							<button class="screenteam__item-block">	<div class="screenteam__name">Дэниэл Редклиф
 							</div></button>
-							<div class="screenteam__content">
+							<div class="screenteam__content ">
 							
 								<div class="screenteam__avatar"><img src="img/team_screen/avatar.jpg" alt="Дэниэл Редклиф" class="screenteam__avatar-img"></div>
 
@@ -560,7 +560,7 @@
 
 						<li class="screenteam__item ">
 							<button class="screenteam__item-block ">		<div class="screenteam__name ">Ричард Джеймс</div> </button>
-							<div class="screenteam__content">
+							<div class="screenteam__content ">
 							
 								<div class="screenteam__avatar"><img src="img/team_screen/avatar.jpg" alt="Ричард Джеймс" class="screenteam__avatar-img"></div>
 								<div class="screenteam__info">
@@ -692,7 +692,7 @@
 							<h3 class="screencomments__title">Анна Иванова</h3>
 							<p class="screencomments__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quis error dignissimos inventore labore earum delectus nostrum amet sequi, itaque corporis, molestiae. Fugiat maiores unde iste, cumque magnam rem vel?
 							</p>
-							<button class="screencomments__button">подробнее</button>
+							<button class="screencomments__button" type="button">подробнее</button>
 
 						</div>
 					</li>
@@ -704,7 +704,7 @@
 							<h3 class="screencomments__title">Константин Спилберг</h3>
 							<p class="screencomments__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
 							</p>
-							<button class="screencomments__button">подробнее</button>
+							<button class="screencomments__button" type="button">подробнее</button>
 
 						</div>
 					</li>
@@ -716,7 +716,7 @@
 							<h3 class="screencomments__title">Алина Воробьева</h3>
 							<p class="screencomments__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
 							</p>
-							<button class="screencomments__button">подробнее</button>
+							<button class="screencomments__button" type="button">подробнее</button>
 
 						</div>
 					</li>
@@ -728,7 +728,7 @@
 							<h3 class="screencomments__title">Максим Уваров</h3>
 							<p class="screencomments__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
 							</p>
-							<button class="screencomments__button">подробнее</button>
+							<button class="screencomments__button" type="button">подробнее</button>
 
 						</div>
 
@@ -744,7 +744,7 @@
 							<p class="screencomments__text">
 								Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
 							</p>
-							<button class="screencomments__button">подробнее</button>
+							<button class="screencomments__button" type="button">подробнее</button>
 
 						</div>
 
@@ -757,7 +757,7 @@
 							<h3 class="screencomments__title">Елена Прекрасная</h3>
 							<p class="screencomments__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
 							</p>
-							<button class="screencomments__button">подробнее</button>
+							<button class="screencomments__button" type="button">подробнее</button>
 
 						</div>
 
@@ -772,7 +772,7 @@
 							<h3 class="screencomments__title">Иван Солнечный</h3>
 							<p class="screencomments__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
 							</p>
-							<button class="screencomments__button">подробнее</button>
+							<button class="screencomments__button" type="button">подробнее</button>
 
 						</div>
 
@@ -785,7 +785,7 @@
 							<h3 class="screencomments__title">Геннадий Юрьев</h3>
 							<p class="screencomments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cumque incidunt iste, dolor dolore sint ipsa vero inventore eum ad in esse nulla. Blanditiis cum ea quod doloremque quasi sint?
 							</p>
-							<button class="screencomments__button">подробнее</button>
+							<button class="screencomments__button" type="button">подробнее</button>
 
 						</div>
 
@@ -918,11 +918,11 @@
 							<div class="footer__contacts-adress">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</div>
 							<div class="footer__contacts-tel"><a href="tel: 8000000000" class="footer__contacts-tellink" title="телефон">+7 (812) 377-13-77</a></div>
 						</div>
-						<div class="footer__social">
-							<ul class="footer__social-list">
+						<div class="social">
+							<ul class="social-list">
 
-								<li class="footer__social-item">
-									<a class=" footer__social-icon" href="#" title="вконтакте">
+								<li class="social-item">
+									<a class=" social-icon" href="#" title="вконтакте">
 
 										<svg class="svgicon" width="26" height="20">
 						<use xlink:href="img/icons/sprite.svg#vk"></use>
@@ -931,8 +931,8 @@
 									</a>
 								</li>
 
-								<li class="footer__social-item">
-									<a class=" footer__social-icon" href="#" title="фейсбук">
+								<li class="social-item">
+									<a class=" social-icon" href="#" title="фейсбук">
 
 										<svg class="svgicon" width="26" height="20">
 						<use xlink:href="img/icons/sprite.svg#fb"></use>
@@ -942,8 +942,8 @@
 									</a>
 								</li>
 
-								<li class="footer__social-item">
-									<a class=" footer__social-icon" href="#" title="инстаграмм">
+								<li class="social-item">
+									<a class="social-icon" href="#" title="инстаграмм">
 
 										<svg class="svgicon" width="26" height="20">
 						<use xlink:href="img/icons/sprite.svg#inst"></use>
@@ -952,8 +952,8 @@
 									</a>
 								</li>
 
-								<li class="footer__social-item">
-									<a class=" footer__social-icon" href="#" title="твиттер">
+								<li class="social-item">
+									<a class=" social-icon" href="#" title="твиттер">
 
 										<svg class="svgicon" width="26" height="20">
 						<use xlink:href="img/icons/sprite.svg#twitter"></use>
@@ -966,22 +966,24 @@
 				</footer>
 			</section>
 
-			<div class="pagginator">
+	
+		</div>
+		
+				<div class="pagginator">
 
 				<ul class="pagginator__list">
-					<li class="pagginator__item"><a href="#" class="pagginator__link"></a></li>
-					<li class="pagginator__item"><a href="#" class="pagginator__link"></a></li>
-					<li class="pagginator__item"><a href="#" class="pagginator__link"></a></li>
-					<li class="pagginator__item"><a href="#" class="pagginator__link"></a></li>
-					<li class="pagginator__item"><a href="#" class="pagginator__link"></a></li>
-					<li class="pagginator__item"><a href="#" class="pagginator__link"></a></li>
-					<li class="pagginator__item"><a href="#" class="pagginator__link"></a></li>
-					<li class="pagginator__item"><a href="#" class="pagginator__link"></a></li>
+					<li class="pagginator__item pagginator__item_active" ><a href="#screenmeeting" class="pagginator__link" ></a></li>
+					<li class="pagginator__item"><a href="#screenbest" class="pagginator__link" ></a></li>
+					<li class="pagginator__item"><a href="#screenslider" class="pagginator__link" ></a></li>
+					<li class="pagginator__item"><a href="#screenteam" class="pagginator__link" ></a></li>
+					<li class="pagginator__item"><a href="#screenmenu" class="pagginator__link" ></a></li>
+					<li class="pagginator__item"><a href="#screencomments" class="pagginator__link" ></a></li>
+					<li class="pagginator__item"><a href="#" class="pagginator__link" ></a></li>
+					<li class="pagginator__item"><a href="#screencontacts" class="pagginator__link" ></a></li>
 
 				</ul>
 
 			</div>
-		</div>
 	</div>
 
 

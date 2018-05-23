@@ -1,8 +1,8 @@
 .pagginator__list {
 
 	position: fixed;
-	top: 80px;
-	right: 50px;
+	top: 10%;
+	right:2%;
 
 
 	& .pagginator__item {
@@ -15,29 +15,54 @@
 		border-radius: 50%;
 		background-color: #fff;
 		margin-bottom: 15px;
+	position: relative;
+		
+		@include tablet {
+			display: none;
+		}
 
+
+	}
+
+}
+
+
+
+
+.pagginator__item_active {
+		
+display: block;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: #fff;
+		margin-bottom: 15px;
 		position: relative;
-
-
-		&:first-child:after {
-			content: "";
+	
+		&:before {
 			display: block;
+			content: "";
 			width: 18px;
 			height: 18px;
 			border-radius: 50%;
 			border: 1px solid #fff;
+	background-color: transparent;
 
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			
-		
-		}
-	
-	}
 
-	@include tablet {
-		display: none;
-	}
+			}
+
+}
+
+.pagginator__link {
+	display: block;
+	width: 15px; 
+	height: 15px;
+	background-color: transparent;
+	position: absolute;
+	top: -50%;
+	left: -50%;
 }

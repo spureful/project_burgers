@@ -4,10 +4,10 @@
 	background-size: cover;
 	display: flex;
 	align-items: center;
-	
+
 	justify-content: center;
 	width: 100%;
-	
+
 
 	position: relative;
 	overflow: hidden;
@@ -15,50 +15,64 @@
 }
 
 
+@include tablet {
+	justify-content: center;
+}
+
+@include phone {
+	position: absolute;
+	top: 50%;
+	left: 2%;
+}
+
+.screenslider__block {
+	//border: 2px solid black;
+	min-width: rem(870px);
+
+	width: $slideWidth;
+
+	min-height: rem(650px);
+	height: 100vh;
+
+	position: relative;
+	overflow: hidden;
+
 	@include tablet {
-		//		min-width: rem(28px);
+		min-width: rem(430px);
+		width: rem(505px);
+		margin: 0 auto;
+
 	}
 
 	@include phone {
-		position: absolute;
-		top: 50%;
-		left: 2%;
+		min-width: rem(320px);
+		width: rem(430px);
+
 	}
 
-.screenslider__block {
-//border: 2px solid black;
-	width: $slideWidth;
-	min-height: 650px;
-	
-	position: relative;
-		overflow: hidden;
-//    padding: 2%;    
-    
-    @include tablet {
-           width: 450px;
-         min-height: 720px;
-    }
 }
 
 
 .screenslider__list {
 
 	display: flex;
+
+
 	align-items: center;
 	position: absolute;
-	top:50%;
+	top: 50%;
 	transform: translateY(-50%);
-	left:0;
+	left: 0;
 	overflow: hidden;
 
-    
+	width: 100%q;
 }
 
 
 .screenslider__item {
-    display: inline-block;
-    text-align: center;
-//	min-height: rem(650px);
+	display: inline-block;
+	text-align: center;
+	min-width: rem(870px);
 	width: $slideWidth;
 	display: flex;
 	padding: 2%;
@@ -67,13 +81,21 @@
 
 
 	@include tablet {
-        width: 450px;
-      min-height: 720px;
+		min-width: rem(430px);
+		width: rem(505px);
+		//		width: rem(550px);
+		min-height: 720px;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 
 	}
+
+	@include phone {
+		min-width: rem(320px);
+		width: rem(431px);
+	}
+
 }
 
 .screenslider__image {
@@ -85,8 +107,8 @@
 
 
 	@include phone {
-		width: rem(360px);
-		height: rem(250px);
+		width: rem(320px);
+		height: rem(200px);
 
 	}
 
@@ -95,16 +117,14 @@
 
 .screenslider__img {
 
-	max-width: rem(505px);
-	height: rem(329px);
-	object-fit: contain;
-
-	//	background-image: url(../img/slider_screen/black_burger.png);
+	width: rem(520px);
+	height: rem(350px);
+	object-fit: contain; //	background-image: url(../img/slider_screen/black_burger.png);
 	//	background-repeat: no-repeat;
 	//	background-size: contain;
 	@include phone {
-		width: rem(360px);
-		height: rem(250px);
+		width: rem(320px);
+		height: rem(200px);
 
 	}
 
@@ -126,7 +146,7 @@
 	left: rem(10px);
 	transition: 0.5s;
 
-	z-index: 100;
+
 	@include phone {
 		top: rem(-100px);
 		left: rem(-5px);
@@ -136,7 +156,13 @@
 .screenslider__icon {
 	fill: #fff;
 	color: #fff;
-	font-size: 16px;
+	font-size: rem(16px);
+
+	@include phone {
+		//		width: rem(50px);
+		//		height: rem(40px);
+		font-size: rem(13px);
+	}
 }
 
 
@@ -230,11 +256,12 @@
 	opacity: 0.5;
 	@include tablet {
 		top: rem(-65px);
-		left: 340px;
+		left: 80%;
 	}
 
 	@include phone {
-		left: rem(280px);
+
+		left: rem(250px);
 		top: rem(-100px);
 	}
 }
@@ -309,20 +336,20 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	transform: rotate(90deg);
-		background-color: transparent;
+	background-color: transparent;
 	border: none;
-    position: absolute;
-    top: 50%;
-    left: 0;
-	}
+	position: absolute;
+	top: 50%;
+	left: 0;
+}
 
 .screenslider__arrow-right {
 	@extend .screenslider__arrow-left;
 	transform: rotate(270deg);
-     position: absolute;
-    top: 50%;
-    left: 97%; 
-	
+	position: absolute;
+	top: 50%;
+	left: 95%;
+
 	@include tablet {
 		//		min-height: rem(28px);
 		//		min-width: rem(26px);

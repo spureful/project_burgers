@@ -16,6 +16,7 @@ padding: rem(20px);
 	justify-content: center;
 	
 	display: none;
+	opacity: 0;
 }
 
 .screencomments__popup-row {
@@ -39,4 +40,6 @@ padding: rem(20px);
 
 .screencomments__popup_active {
 	display: flex;
+	
+opacity: 0;
 }

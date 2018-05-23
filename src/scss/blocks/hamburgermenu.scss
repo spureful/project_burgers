@@ -34,13 +34,13 @@
 	padding-top: rem(10px);
 	margin-bottom: 25%;
 }
-.hamburgermenu__logo {
-	width: rem(99px);
-	height: rem(75px);
-	background-image: url(../img/icons/logo.svg);
-	background-repeat: no-repeat;
-	background-size: contain;
-}
+//.hamburgermenu__logo {
+//	width: rem(99px);
+//	height: rem(75px);
+//	background-image: url(../img/icons/logo.svg);
+//	background-repeat: no-repeat;
+//	background-size: contain;
+//}
 
 .hamburgermenu__close {
 	@include closebtn(#bfc0c1);

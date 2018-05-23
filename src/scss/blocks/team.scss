@@ -4,6 +4,7 @@
     background-size: cover;
 
     position: relative;
+	overflow: hidden;
 }
 
 .screenteam__container {
@@ -103,7 +104,7 @@
             top: rem(3px);
         }
     }
-    + .screenteam__content {
+    .screenteam__content {
         height: 100%;
     
     }
@@ -134,6 +135,7 @@ height: 0;
 
 
 }
+
 
 
 
