@@ -810,18 +810,18 @@
 						<h2 class="screenform__title-text">Закажите доставку</h2>
 					</div>
 
-					<form action="get" class="screenform__form">
+					<form action="server.php" method ="post" class="screenform__form" id="screenform__form">
 
 						<div class="screenform__column">
 							<div class="screenform__row">
 								<div class="screenform__field">
 									<label for="screenform__field-name" class="screenform__label "> <div class="screenform__label-name">Имя</div>	</label>
-									<input type="text" class="screenform__field-item" id="screenform__field-name" placeholder="Иван">
+									<input type="text" class="screenform__field-item" id="screenform__field-name" name="screenform__field-name" placeholder="Иван">
 								</div>
 
 								<div class="screenform__field">
 									<label for="screenform__field-phone" class="screenform__label "> <div class="screenform__label-name">Телефон</div></label>
-									<input type="tel" class="screenform__field-item" id="screenform__field-phone" placeholder="89212264923">
+									<input type="tel" class="screenform__field-item" id="screenform__field-phone" name="screenform__field-phone" placeholder="89212264923">
 								</div>
 
 							</div>
@@ -829,27 +829,27 @@
 							<div class="screenform__row">
 								<div class="screenform__field">
 									<label for="screenform__field-street" class="screenform__label "> <div class="screenform__label-name">Улица</div></label>
-									<input type="text" class="screenform__field-item" id="screenform__field-street" placeholder="Улица">
+									<input type="text" class="screenform__field-item" id="screenform__field-street" name="screenform__field-street" placeholder="Улица">
 								</div>
 							</div>
 
 							<div class="screenform__row">
 								<div class="screenform__field">
 									<label for="screenform__field-house" class="screenform__label "> <div class="screenform__label-name">Дом</div>	</label>
-									<input type="number" class="screenform__field-item" id="screenform__field-house" placeholder="12">
+									<input type="number" class="screenform__field-item" id="screenform__field-house" name="screenform__field-house" placeholder="12">
 								</div>
 								<div class="screenform__field">
 									<label for="screenform__field-corpus" class="screenform__label "> <div class="screenform__label-name">Корпус</div>			</label>
 
-									<input type="number" class="screenform__field-item" id="screenform__field-corpus" placeholder="1">
+									<input type="number" class="screenform__field-item" id="screenform__field-corpus"  name="screenform__field-corpus" placeholder="1">
 								</div>
 								<div class="screenform__field">
 									<label for="screenform__field-flat" class="screenform__label "> <div class=" screenform__label-name">Квартира</div>	</label>
-									<input type="number" class="screenform__field-item" id="screenform__field-flat" placeholder="68">
+									<input type="number" class="screenform__field-item" id="screenform__field-flat" name="screenform__field-flat" placeholder="68">
 								</div>
 								<div class="screenform__field">
 									<label for="screenform__field-floor" class="screenform__label "> <div class="screenform__label-name">Этаж</div></label>
-									<input type="number" class="screenform__field-item" id="screenform__field-floor" placeholder="5">
+									<input type="number" class="screenform__field-item" id="screenform__field-floor"  name="screenform__field-floor" placeholder="5">
 								</div>
 							</div>
 						</div>
@@ -858,14 +858,14 @@
 							<div class="screenform__row screenform__row_phone">
 								<div class="screenform__field">
 									<label for="screenform__field-comment" class="screenform__label "> <div class="screenform__label-name">Комментарий</div></label>
-									<textarea class="screenform__field-comment" id="screenform__field-comment">
+									<textarea class="screenform__field-comment" name='screenform__field-comment' id="screenform__field-comment">
 						</textarea>
 								</div>
 							</div>
 
 							<div class="screenform__row screenform__row_phone">
 								<label class="screenform__radio">					
-<input type="radio" name="radio" class="screenform__radio-item" id="screenform__radiocash" checked>
+<input type="radio"  name="screenform__radio" class="screenform__radio-item" id="screenform__radiocash" value='Потребуется сдача' checked>
 
 					
 					<div class="screenform__radiocustom" tabindex="0"></div>
@@ -876,7 +876,7 @@
 
 
 								<label class="screenform__radio">
-<input type="radio" name="radio" class="screenform__radio-item" id="screenform__radiocard">
+<input type="radio" name="screenform__radio" class="screenform__radio-item" id="screenform__radiocard" value=' Оплата по карте'>
 
 					<div class="screenform__radiocustom" tabindex="0" ></div>
 					<label for="screenform__radiocard" class="screenform__label-name">  Оплата по карте</label>
@@ -886,7 +886,7 @@
 
 							<div class="screenform__row screenform__row_phone">
 								<label class="screenform__checkbox">
-							<input type="checkbox" class="screenform__checkbox-item" id="screenform__checkbox-item" checked>
+							<input type="checkbox" class="screenform__checkbox-item" id="screenform__checkbox-item"  name='dont-call' value = '1' checked>
 							
 							<div class="screenform__checkboxcustom" tabindex="0" checked></div>
 							<label for="screenform__checkbox-item" class="screenform__label-name">Не перезванивать</label>
@@ -975,7 +975,7 @@
 					<li class="pagginator__item pagginator__item_active" ><a href="#screenmeeting" class="pagginator__link" ></a></li>
 					<li class="pagginator__item"><a href="#screenbest" class="pagginator__link" ></a></li>
 					<li class="pagginator__item"><a href="#screenslider" class="pagginator__link" ></a></li>
-					<li class="pagginator__item"><a href="#screenteam" class="pagginator__link" ></a></li>
+					<li class="pagginator__item "><a href="#screenteam" class="pagginator__link" ></a></li>
 					<li class="pagginator__item"><a href="#screenmenu" class="pagginator__link" ></a></li>
 					<li class="pagginator__item"><a href="#screencomments" class="pagginator__link" ></a></li>
 					<li class="pagginator__item"><a href="#" class="pagginator__link" ></a></li>

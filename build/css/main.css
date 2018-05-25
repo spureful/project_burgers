@@ -180,7 +180,8 @@ a {
   -ms-flex-align: center;
   align-items: center;
   margin-left: 1.25rem;
-  display: none; }
+  display: none;
+  position: relative; }
   @media screen and (max-width: 945px) {
     .menu__hamburger {
       display: -webkit-box;
@@ -1007,9 +1008,6 @@ a {
     transform: rotate(180deg);
     top: 0.1875rem; }
 
-.screenteam__item_active .screenteam__content {
-  height: 100%; }
-
 .screenteam__content {
   margin-left: 1.25rem;
   padding-top: 0.625rem;
@@ -1175,9 +1173,6 @@ a {
 
 .screenmenu__item_active .screenmenu__position-title {
   color: #f9b43b; }
-
-.screenmenu__item_active .screenmenu__content {
-  width: 100%; }
 
 .screencomments {
   display: -webkit-box;

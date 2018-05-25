@@ -74,136 +74,72 @@ openComposition();
 
 //АККОРДЕОН В СЕКЦИИ КОМАНДЫ
 function openTeam() {
-	//	const openBtn = document.querySelectorAll('.screenteam__item-block');
-	//  const currentBlock = document.querySelector('.screenteam__item');
-	//
-	////
-	//for(i=0; i<openBtn.length; i++){
-	//	openBtn[i].addEventListener('click', function (e) {
-	//  
-	//		const z = e.currentTarget;
-	//		
-	//		const appearBlock = z.parentNode;
-	//		console.log(appearBlock);
-	//
-	//		 if ( appearBlock.classList.contains('screenteam__item_active') && openBtn[i] !== z)	{appearBlock.classList.remove('screenteam__item_active')}
-	//		else if (openBtn[i] == z){appearBlock.classList.toggle('screenteam__item_active')
-	//			}
-	//	
-	//!!!!!!!!!!!!!!!! ANIMATION
-	//		const activeButton = document.querySelector(".screenteam__item_active");
-	//		console.log(activeButton);
-	//
-	//		const activeContent = activeButton.querySelector('.screenteam__content');
-	//		console.log(activeContent);
-	//
-	//
-	//		activeButton.querySelector('.screenteam__content').style.heiht = 0;
-	//		
-	//
-	//
-	//
-	//		let anim = 0;
-	//
-	//		function openContent() {
-	//			setTimeout(function uh() {
-	//				if (anim < 120) {
-	//					activeContent.style.height = anim + 'px';
-	//					anim += 5;
-	//					setTimeout(uh, 30);
-	//				}
-	//			}, 10);
-	//
-	//		}
-	//
-	//		function closeContent() {
-	//			setTimeout(function dh() {
-	//
-	//
-	//				if (anim > 0) {
-	//					activeContent.style.height = anim + 'px';
-	//					anim -= 5;
-	//					setTimeout(dh, 30);
-	//				}
-	//			}, 10);
-	//		}
 
-	//	});
-	//}
-	//}
-	//	 !!!!!!!!!!!!!!!!!!!JQUERY
+
 
 	const openBtn = $('.screenteam__item-block');
+	const allItems = document.querySelectorAll('.screenteam__item');
+	const activeItem = document.querySelectorAll('.screenteam__item_active');
+
+	const allContent = document.querySelectorAll('.screenteam__content');
+
 
 	openBtn.on('click', function () {
+
+		const allCont = document.querySelectorAll('.screenteam__container');
+		for (a = 0; a < allCont.length; a++)
+			allCont[a].style.heiight = 0 + 'px';
+
 		$('.screenteam__item-block').not($(this)).closest(".screenteam__item").removeClass('screenteam__item_active');
 
 
 		$(this).closest(".screenteam__item").toggleClass('screenteam__item_active');
-		
-		const activeButton = document.querySelector(".screenteam__item_active");
-				
-		console.log(activeButton);
-		
-				const activeContent = activeButton.querySelector('.screenteam__content');
-				console.log(activeContent);
-		
-//		let anim = 0;
-//		
-//		setTimeout(function uh() {
-//						if (anim < 120) {
-//							activeContent.style.height = anim + 'px';
-//							anim += 5;
-//							setTimeout(uh, 30);
-//						}
-//					}, 10);
-		
-		//___________________________
-		//	
-		////		if (currentBlock.classList.contains('screenteam__item_active'))openContent()
-		////		else closeContent();
-		//
-		////!!!!!!!!!!!!!!!! ANIMATION
-		//
-		//		const activeButton = document.querySelector(".screenteam__item_active");
-		//		console.log(activeButton);
-		//
-		//		const activeContent = activeButton.querySelector('.screenteam__content');
+
+
+
+		const activeContent = $('.screenteam__item_active').find('.screenteam__content');
 		//		console.log(activeContent);
-		//
-		//
-		//		activeButton.querySelector('.screenteam__content').style.heiht = 0;
-		//		
-		//
-		//
-		//
-		//		let anim = 0;
-		//
-		//		function openContent() {
-		//			setTimeout(function uh() {
-		//				if (anim < 120) {
-		//					activeContent.style.height = anim + 'px';
-		//					anim += 5;
-		//					setTimeout(uh, 30);
-		//				}
-		//			}, 10);
-		//
-		//		}
-		//
-		//		function closeContent() {
-		//			setTimeout(function dh() {
-		//
-		//
-		//				if (anim > 0) {
-		//					activeContent.style.height = anim + 'px';
-		//					anim -= 5;
-		//					setTimeout(dh, 30);
-		//				}
-		//			}, 10);
-		//		}
-		//
+
+		const unactiveItem = $('.screenteam__item').filter('.screenteam__item').not('.screenteam__item_active');
+		const unactiveContent = unactiveItem.find('.screenteam__content');
+		//		console.log(unactiveItem);
+		//		console.log(unactiveContent);
+
+		let anim = 0;
+
+
+				unactiveContent.height(0 + 'px');
+
+
+
+
+		setTimeout(function uh() {
+			if (anim < 115)
+			{activeContent.height(anim + 'px');
+			anim += 5;}
+//
+//			else if (anim >= 0)
+//			{
+//				unactiveContent.height(anim + 'px');
+//			anim -= 5;
+//			}
+			
+			setTimeout(uh, 30);
+
+		}, 30);
+
+//		setTimeout(function dh() {
+//			if (anim > 0)
+//				unactiveContent.height(anim + 'px');
+//			anim -= 5;
+//			setTimeout(dh, 30);
+//		}, 10);
+
+
+
 	})
 };
+
 
 
 
@@ -221,10 +157,35 @@ function openMenuPosition() {
 
 		$(this).closest(".screenmenu__item").toggleClass('screenmenu__item_active');
 
+
+
+
+		const activeContent = $('.screenmenu__item_active').find('.screenmenu__content');
+		console.log(activeContent);
+
+		const unactiveItem = $('.screenmenu__item ').filter('.screenmenu__item ').not('.screenmenu__item_active');
+		const unactiveContent = unactiveItem.find('.screenmenu__content');
+		console.log(unactiveItem);
+		console.log(unactiveContent);
+
+		let wanim = 0;
+
+
+		unactiveContent.width(0 + 'px');
+
+
+		setTimeout(function uh() {
+			if (wanim < 100)
+				activeContent.width(wanim + '%');
+			wanim += 5;
+
+			setTimeout(uh, 10);
+
+		}, 10);
+
+
 	});
-
-
-};
+}
 
 
 
@@ -248,11 +209,13 @@ function commentsPopup() {
 	console.log(allStyle.opacity);
 
 	let op = 0;
+	op.toFixed(1);
+
 
 
 	for (var i = 0; i < openPop.length; i++) {
 		openPop[i].addEventListener('click', function () {
-
+			console.log('start');
 			var z = this;
 			var popParent = z.parentNode;
 			//			console.log(popParent);
@@ -261,37 +224,60 @@ function commentsPopup() {
 
 			const comment = popParent.querySelector('.screencomments__text');
 
+			console.log(op);
+
 			popup.classList.add('screencomments__popup_active');
 
 			namePopup.textContent = name.innerHTML;
 			commentPopup.textContent = comment.innerHTML;
 
+
+			console.log(op);
+
 			setTimeout(function (opac) {
+				popup.style.opacity = op.toFixed(1);
+
+				op += 0.2;
+				console.log(op)
 				if (op <= 1) {
-					popup.style.opacity = op;
-					op += 0.2;
-					return op;
-								
+
+					setTimeout(arguments.callee,
+						100)
+
 				}
-				setTimeout(opac, 100);
-				
+				return op;
 			}, 100);
 		});
 
 
 
 
+
 		closePop.addEventListener('click', function () {
 			popup.classList.remove('screencomments__popup_active');
-			
-			setInterval(function (unopac) {
-				if (op >= 0) {
-					popup.style.opacity = op;
-					op -= 0.2;
-					return op;
+
+
+			console.log(op);
+			op = 1;
+			console.log(op);
+			setTimeout(function (unopac) {
+//				debugger;
+				popup.style.opacity = op;
+				op -= 0.2;
+				op.toFixed(1);
+
+
+				console.log(op)
+				op.toFixed(1);
+				console.log(op)
+				if (op > 0) {
+
+					setTimeout(arguments.callee,
+						500)
+
 				}
-//				setTimeout(opac, 100);
-			}, 100);
+
+			}, 500);
 		});
 
 	}
@@ -369,47 +355,36 @@ $(function () {
 
 function OnePageScroll() {
 	const screen = document.querySelectorAll(".screen");
-//	const CurrentScreen = document.querySelector('.screenactive');
+
 	const main = document.querySelector(".maincontent");
 
 	let i = 0;
 
 
-	const pagginatorLink = document.querySelectorAll(".pagginator__link");
+
+	//screenActive(screen);
 
 
-	for (a = 0; a < pagginatorLink.length; a++)
-		pagginatorLink[i].addEventListener('click', function (e) {
-				const z = this;
+	//		console.log(screens);
 
-				const pagginator =
-					z.parentNode;
 
-				console.log(pagginator);
-				pagginator.classList.add('pagginator__item_active');
-
-			}
-
-		);
-for (a=0; a < screen.length; a++){
-const screens = screen[a];	
-const currentScreen = screen[a].classList.add('screenactive');
-console.log(screens);
-}
-	
 
 	function scrollDown() {
 		if (i <= 0 && i > (-700)) {
 			i -= 100
 		};
+
 		main.style.transform = `translateY(${i}%)`;
 		console.log(i);
 		return i;
-
+		console.log(this)
 
 	};
 
+	
 
+//дата-метод!
+	
 	function scrollUp() {
 		if (i < 0 && i >= (-700)) {
 			i += 100
@@ -422,10 +397,12 @@ console.log(screens);
 
 	document.addEventListener('keydown', function (e) {
 
-			console.log(e.keyCode);
+			//			console.log(e.keyCode);
 
 			if (e.keyCode == 40) {
+
 				scrollDown();
+
 
 			}
 
@@ -443,6 +420,7 @@ console.log(screens);
 		console.log(deltay);
 
 		if (deltay > 0) scrollDown();
+		console.log($(this).find('screen'));
 
 		if (deltay < 0) scrollUp();
 	});
@@ -450,3 +428,40 @@ console.log(screens);
 }
 
 OnePageScroll();
+
+
+//                   ФОРМА!
+
+
+function ScreenForm() {
+	$('#screenform__form').on('submit', submitForm);
+
+	function submitForm(e) {
+		e.preventDefault();
+
+		const form = $(e.target),
+			data = form.serialize(),
+			type = form.attr('method'),
+			url = form.attr('action');
+
+		const request = $.ajax({
+			type: type,
+			url: url,
+			dataType: 'JSON',
+			data: data
+		});
+
+		request.done(function (msg) {
+			const mes = msg.mes,
+				status = msg.status;
+			if (ststus === 'ОК') {
+				form.append('<div class="screenform__sucsess">' + mes + '</div>');
+			} else {
+				form.append('<div class="screenform__error">' + mes + '</div>');
+			}
+		});
+
+	};
+};
+
+ScreenForm();
