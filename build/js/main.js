@@ -348,78 +348,174 @@ $(function () {
 
 ////!!!!!!!!ONEPAGESCROLL
 
+
 function OnePageScroll() {
-	const screen = document.querySelectorAll(".screen");
+//as at vebinar
+	
+	const sections = $('.screen');
+const display = $('.maincontent');
+let inScroll = false;
 
-	const main = document.querySelector(".maincontent");
+const setActiveMenuItem = itemEq => {
+    $('.pagginator__item')
+        .eq(itemEq)
+        .addClass('pagginator__item_active')
+        .siblings()
+        .removeClass('pagginator__item_active');
 
-	let i = 0;
+};
 
+const performTransition = sectionEq => {
+  const position = `${-sectionEq * 100}%`;
+  if (inScroll) return;
 
+  inScroll = true;
 
+  sections
+      .eq(sectionEq)
+      .addClass('active')
+      .siblings()
+      .removeClass('active');
 
-
-	function scrollDown() {
-		if (i <= 0 && i > (-700)) {
-			i -= 100
-		};
-
-		main.style.transform = `translateY(${i}%)`;
-		console.log(i);
-		return i;
-		console.log(this)
-
-	};
-
-
-
-	//дата-метод!
-
-	function scrollUp() {
-		if (i < 0 && i >= (-700)) {
-			i += 100
-		};
-		main.style.transform = `translateY(${i}%)`;
-		console.log(i);
-		return i;
-	};
+  display.css({
+      transform: `translate(0, ${position})`,
+      '-webkit-transform': `translate(0, ${position})`
+  });
 
 
-	document.addEventListener('keydown', function (e) {
+  const transitionDuration = parseInt(display.css('transition-duration')) * 100;
+  setTimeout(() => {
+      inScroll = false;
+      setActiveMenuItem(sectionEq);
 
-			//			console.log(e.keyCode);
+  }, transitionDuration + 300); // за 300 мс проходит инерция мыши
 
-			if (e.keyCode == 40) {
+};
 
-				scrollDown();
+const scrollToSection = direction => {
+    const activeSection = sections.filter('.active');
+    const nextSection = activeSection.next();
+    const prevSection = activeSection.prev();
 
+    if (direction === 'up' && prevSection.length){
+        performTransition(prevSection.index());
+    }
 
-			}
+    if (direction === 'down' && nextSection.length){
+        performTransition(nextSection.index());
 
-			if (e.keyCode == 38) {
-				scrollUp()
-
-			}
-
-		}
-
-	);
-
-	document.addEventListener('wheel', function (e) {
-		const deltay = e.deltaY;
-		console.log(deltay);
-		console.log(inf);
-
-		//		for (i = 0; i < screen.length; i++)
-		//			var inf = screen[i].dataset.screen; // нашла, что их 8. но как мне найти именно нужный???
-		//		for (i = 0; i < inf.length; i++)
-		//			console.log(inf[i]);
-
-		if (deltay > 0) scrollDown();
+    }
 
 
-		if (deltay < 0) scrollUp();
-	});
+};
+
+$(document).on({
+    wheel: event => { 
+        const deltaY = event.originalEvent.deltaY;
+        const direction = deltaY > 0
+        ? 'down'
+        : 'up'
+
+        scrollToSection(direction);
+    },
+
+    keydown: event => { 
+        switch (event.keyCode){
+            case 40:
+                scrollToSection('down');
+                break;
+            case 38:
+                scrollToSection('up');
+                break;
+        }
+    }
+
+});
+
+$('[data-scroll-to]').on('click', e => {
+    e.preventDefault();
+
+    const target = parseInt($(e.currentTarget).attr('data-scroll-to'));
+    performTransition(target);
+
+});
+	
+	///mine
+	//	const screen = document.querySelectorAll(".screen");
+//	
+//
+//	const main = document.querySelector(".maincontent");
+//
+//	let i = 0;
+//
+//
+//for (a =0; a<screen.length; a++ ){
+//	 screen[a].dataset.screenScroll;
+//}
+//
+//
+//	function scrollDown() {
+//		if (i <= 0 && i > (-700)) {
+//			i -= 100
+//		};
+//
+//		main.style.transform = `translateY(${i}%)`;
+//		console.log(i);
+//		return i;
+//		console.log(this)
+//
+//	};
+//
+//
+//
+//	//дата-метод!
+//
+//	function scrollUp() {
+//		if (i < 0 && i >= (-700)) {
+//			i += 100
+//		};
+//		main.style.transform = `translateY(${i}%)`;
+//		console.log(i);
+//		return i;
+//	};
+//
+//
+//	document.addEventListener('keydown', function (e) {
+//
+//			//			console.log(e.keyCode);
+//
+//			if (e.keyCode == 40) {
+//
+//				scrollDown();
+//
+//
+//			}
+//
+//			if (e.keyCode == 38) {
+//				scrollUp()
+//
+//			}
+//
+//		}
+//
+//	);
+//
+//	document.addEventListener('wheel', function (e) {
+//		const deltay = e.deltaY;
+//		console.log(deltay);
+////		console.log(numb);
+//	
+//
+//		//		for (i = 0; i < screen.length; i++) //
+//		//			var inf = screen[i].dataset.screen; // нашла, что их 8. но как мне найти именно нужный???
+//		//		for (i = 0; i < inf.length; i++) ///
+//		//			console.log(inf[i]);    //
+//
+//		if (deltay > 0) scrollDown();
+//
+//
+//		if (deltay < 0) scrollUp();
+//	});
 
 }
 
