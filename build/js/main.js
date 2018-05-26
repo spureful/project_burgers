@@ -98,36 +98,33 @@ function openTeam() {
 
 
 		const activeContent = $('.screenteam__item_active').find('.screenteam__content');
-		//		console.log(activeContent);
+		//				console.log(activeContent);
 
 		const unactiveItem = $('.screenteam__item').filter('.screenteam__item').not('.screenteam__item_active');
 		const unactiveContent = unactiveItem.find('.screenteam__content');
-		//		console.log(unactiveItem);
-		//		console.log(unactiveContent);
+		//		//		console.log(unactiveItem);
+		console.log(unactiveContent);
 
 		let anim = 0;
-
-
+		//
+		//
 		unactiveContent.height(0 + 'px');
-
-
-
-
+		//
+		//
+		//
+		//
 		setTimeout(function uh() {
 			if (anim < 115) {
 				activeContent.height(anim + 'px');
 				anim += 5;
 			}
+			//	
 			//
-			//			else if (anim >= 0)
-			//			{
-			//				unactiveContent.height(anim + 'px');
-			//			anim -= 5;
-			//			}
-
 			setTimeout(uh, 30);
-
+			//
 		}, 30);
+
+
 
 		//		setTimeout(function dh() {
 		//			if (anim > 0)
@@ -224,31 +221,28 @@ function commentsPopup() {
 			const name = popParent.querySelector('.screencomments__title');
 
 			const comment = popParent.querySelector('.screencomments__text');
- op = 0;
+			op = 0;
 			console.log(op);
 
 
 			namePopup.textContent = name.innerHTML;
 			commentPopup.textContent = comment.innerHTML;
 
+			setTimeout(function () {
 
-			console.log(op);
 
-			setTimeout(function (opac) {
-
-				popup.style.display = 'flex';
-				popup.style.opacity =op;
-
+				popup.style.display = "flex";
 				op += 0.2;
-				console.log(op)
-				if (op <= 1) {
+				popup.style.opacity = op;
 
+				if (op < 1) {
 					setTimeout(arguments.callee,
 						100)
-
 				}
 
+				console.log(op);
 			}, 100);
+
 		});
 
 
@@ -263,7 +257,7 @@ function commentsPopup() {
 
 				popup.style.opacity = op;
 				op -= 0.2;
-		
+
 				console.log(op)
 				if (op > 0) {
 
@@ -271,7 +265,7 @@ function commentsPopup() {
 						100)
 
 				}
-								popup.style.display = 'none';
+				popup.style.display = 'none';
 			}, 100);
 		});
 
@@ -347,171 +341,188 @@ $(function () {
 
 
 ////!!!!!!!!ONEPAGESCROLL
-
+//
 
 function OnePageScroll() {
-//as at vebinar
 	
-//	const sections = $('.screen');
-//const display = $('.maincontent');
-//let inScroll = false;
-//
-//const setActiveMenuItem = itemEq => {
-//    $('.pagginator__item')
-//        .eq(itemEq)
-//        .addClass('pagginator__item_active')
-//        .siblings()
-//        .removeClass('pagginator__item_active');
-//
-//};
-//
-//const performTransition = sectionEq => {
-//  const position = `${-sectionEq * 100}%`;
-//  if (inScroll) return;
-//
-//  inScroll = true;
-//
-//  sections.eq(sectionEq).addClass('screenactive').siblings().removeClass('screenactive');
-//
-//  display.css({
-//      transform: `translateY( ${position})`,
-//      '-webkit-transform': `translateY( ${position})`
-//  });
-//
-//
-//  const transitionDuration = parseInt(display.css('transition-duration')) * 100;
-//  setTimeout(() => {
-//      inScroll = false;
-//      setActiveMenuItem(sectionEq);
-//
-//  }, transitionDuration + 300); // за 300 мс проходит инерция мыши
-//
-//};
-//
-//const scrollToSection = direction => {
-//    const activeSection = sections.filter('.screenactive');
-//    const nextSection = activeSection.next();
-//    const prevSection = activeSection.prev();
-//
-//    if (direction === 'up' && prevSection.length){
-//        performTransition(prevSection.index());
-//    }
-//
-//    if (direction === 'down' && nextSection.length){
-//        performTransition(nextSection.index());
-//
-//    }
-//
-//
-//};
-//
-//$(document).on({
-//    wheel: event => { 
-//        const deltaY = event.originalEvent.deltaY;
-//        const direction = deltaY > 0
-//        ? 'down'
-//        : 'up'
-//
-//        scrollToSection(direction);
-//    },
-//
-//    keydown: event => { 
-//        switch (event.keyCode){
-//            case 40:
-//                scrollToSection('down');
-//                break;
-//            case 38:
-//                scrollToSection('up');
-//                break;
-//        }
-//    }
-//
-//});
-//
-//$('[data-scroll-to]').on('click', e => {
-//    e.preventDefault();
-//
-//    const target = parseInt($(e.currentTarget).attr('data-scroll-to'));
-//    performTransition(target);
-//
-//});
-//	
-	///mine
-		const screen = document.querySelectorAll(".screen");
-	
+	const sections = $(".screen");
+const display = $(".maincontent");
+let inScroll = false;
 
-	const main = document.querySelector(".maincontent");
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
 
-	let i = 0;
+const setActiveMenuItem = itemEq => {
+  $('.pagginator__item').eq(itemEq).addClass('pagginator__item_active')
+    .siblings().removeClass('pagginator__item_active')
+} 
+
+const performTransition = sectionEq => {
+  const position = `${sectionEq * -100}%`;
+
+  if (inScroll) return;
+
+  inScroll = true;
+
+  sections
+    .eq(sectionEq)
+    .addClass("screenactive")
+    .siblings()
+    .removeClass("screenactive");
+
+  display.css({
+    transform: `translate(0, ${position})`,
+    "-webkit-transform": `translate(0, ${position})`
+  });
+
+  setTimeout(() => {
+    inScroll = false;
+    setActiveMenuItem(sectionEq);
+  }, 1300);
+};
+
+const scrollToSection = direction => {
+  const activeSection = sections.filter(".screenactive");
+  const nextSection = activeSection.next();
+  const prevSection = activeSection.prev();
+
+  if (direction === "up" && prevSection.length) {
+    performTransition(prevSection.index());
+	  	  console.log(-prevSection.index())
+
+  }
+
+  if (direction === "down" && nextSection.length) {
+    performTransition(nextSection.index());
+	  console.log(nextSection.index()-1)
+  }
+};
+
+$(document).on({
+  wheel: e => {
+    const deltaY = e.originalEvent.deltaY;
+    const direction = deltaY > 0 ? "down" : "up";
+
+    scrollToSection(direction);
+  },
+  keydown: e => {
+    switch (e.keyCode) {
+      case 40:
+        scrollToSection("down");
+        break;
+
+      case 38:
+        scrollToSection("up");
+        break;
+    }
+  },
+  touchmove: e => e.preventDefault()
 
 
-for (a =0; a<screen.length; a++ ){
-	 screen[a].dataset.screenScroll;
+});
+
+
+$('[data-scroll-to]').on('click', e => {
+  e.preventDefault();
+
+  const target = parseInt($(e.currentTarget).attr('data-scroll-to'));
+
+
+  performTransition(target);
+
+})
+
+if (isMobile) {
+  $(document).swipe({
+    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+      /**
+       * плагин возвращает фактическое...
+       * ...
+       */
+      const scrollDirection = direction === 'down' ? 'up' : 'down';
+      
+      scrollToSection(scrollDirection);
+    }
+  });
 }
-
-
-	function scrollDown() {
-		if (i <= 0 && i > (-700)) {
-			i -= 100
-		};
-
-		main.style.transform = `translateY(${i}%)`;
-		console.log(i);
-		return i;
-		console.log(this)
-
-	};
-
-
-
-	//дата-метод!
-
-	function scrollUp() {
-		if (i < 0 && i >= (-700)) {
-			i += 100
-		};
-		main.style.transform = `translateY(${i}%)`;
-		console.log(i);
-		return i;
-	};
-
-
-	document.addEventListener('keydown', function (e) {
-
-			//			console.log(e.keyCode);
-
-			if (e.keyCode == 40) {
-
-				scrollDown();
-
-
-			}
-
-			if (e.keyCode == 38) {
-				scrollUp()
-
-			}
-
-		}
-
-	);
-
-	document.addEventListener('wheel', function (e) {
-		const deltay = e.deltaY;
-		console.log(deltay);
-//		console.log(numb);
 	
-
-		//		for (i = 0; i < screen.length; i++) //
-		//			var inf = screen[i].dataset.screen; // нашла, что их 8. но как мне найти именно нужный???
-		//		for (i = 0; i < inf.length; i++) ///
-		//			console.log(inf[i]);    //
-
-		if (deltay > 0) scrollDown();
-
-
-		if (deltay < 0) scrollUp();
-	});
+	//	
+	///mine
+//	const screen = document.querySelectorAll(".screen");
+//
+//
+//
+//	const main = document.querySelector(".maincontent");
+//
+//	let i = 0;
+//
+//
+//
+//
+//	function scrollDown() {
+//		if (i <= 0 && i > (-700)) {
+//			i -= 100
+//		};
+//
+//		main.style.transform = `translateY(${i}%)`;
+//
+//	};
+//
+//
+//
+//	//дата-метод!
+//
+//	function scrollUp() {
+//		if (i < 0 && i >= (-700)) {
+//			i += 100
+//		};
+//		main.style.transform = `translateY(${i}%)`;
+//		//		console.log(i);
+//		return i;
+//	};
+//
+//
+//	document.addEventListener('keydown', function (e) {
+//
+//			//			console.log(e.keyCode);
+//
+//			if (e.keyCode == 40) {
+//
+//				scrollDown();
+//
+//
+//			}
+//
+//			if (e.keyCode == 38) {
+//				scrollUp()
+//
+//			}
+//
+//		}
+//
+//	);
+//
+//	document.addEventListener('wheel', function (e) {
+//		const deltay = e.deltaY;
+//		//		console.log(deltay);
+//
+//
+//		//		const screenmeeting = document.querySelector(".screenmeeting");
+//		//		console.log(screenmeeting.dataset.screenScroll);
+//
+//
+//
+//		//		for (i = 0; i < screen.length; i++) //
+//		//			var inf = screen[i].dataset.screen; // нашла, что их 8. но как мне найти именно нужный???
+//		//		for (i = 0; i < inf.length; i++) ///
+//		//			console.log(inf[i]);    //
+//
+//		if (deltay > 0) scrollDown();
+//		const target = $('.screen').attr('data-screenScroll');
+//		console.log(target);
+//
+//		if (deltay < 0) scrollUp();
+//	});
 
 }
 
@@ -542,10 +553,10 @@ function ScreenForm() {
 		request.done(function (msg) {
 			const mes = msg.mes,
 				status = msg.status;
-			if (ststus === 'ОК') {
-				form.append('<div class="screenform__sucsess">' + mes + '</div>');
+			if (status === 'ОК') {
+				form.append('<div class="screenform__answ">' + mes + '</div>');
 			} else {
-				form.append('<div class="screenform__error">' + mes + '</div>');
+				form.append('<div class="screenform__answ">' + mes + '</div>');
 			}
 		});
 

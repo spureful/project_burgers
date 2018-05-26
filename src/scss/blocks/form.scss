@@ -204,4 +204,22 @@ resize: none;
 	background-color: transparent;
 	border: none;
 }
+.screenform__answ{
+	background-color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-right: 5px;
+		@extend %contenttext;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
 
+.btn-modal {
+	@include button;
+}

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.hamburgermenu, .screenslider__text, .screenteam__text, .screenmenu__content-text, .screenform__label-name, .screenform__button-clear, .screencontacts__map-hint, .screencontacts__map-balloon, .footer__contacts-adress {
+.hamburgermenu, .screenslider__text, .screenteam__text, .screenmenu__content-text, .screenform__label-name, .screenform__button-clear, .screenform__answ, .screencontacts__map-hint, .screencontacts__map-balloon, .footer__contacts-adress {
   font-family: 'ubuntulight', sans-serif;
   color: #fff;
   font-size: 0.875rem;
@@ -1565,6 +1565,43 @@ a {
   text-transform: capitalize;
   background-color: transparent;
   border: none; }
+
+.screenform__answ {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.btn-modal {
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem 0.9375rem;
+  background-color: #e45028;
+  cursor: pointer;
+  font-family: 'ubuntumedium', sans-serif;
+  font-size: 0.81rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase; }
+  .btn-modal:hover {
+    color: burlywood; }
 
 .screencontacts {
   display: -webkit-box;

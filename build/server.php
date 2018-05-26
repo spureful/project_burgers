@@ -13,7 +13,9 @@ $pay = $_POST['screenform__radio'];
 $checkbox = $_POST['dont-call'];
 $checkbox = isset($checkbox) ? "no" : "yes";
 
-$mail_msg = '
+
+
+$mail_message = '
 <html>
 <head>
 <title>Заявка на бургеры </title>
@@ -23,6 +25,7 @@ $mail_msg = '
 
 <h2>Заказ бургера </h2>
 <ul>
+
     <li>Имя:' . $name . '</li>
     <li>Телефон:' . $phone . '</li>
     <li>Улица:' . $street . '</li>
@@ -36,23 +39,24 @@ $mail_msg = '
 </ul>
 </body>
 </html>';
- 
-$headers = "From: Администратор сайта <spureful@gmail.com>\r\n".
-"MIME-Version: 1.0" . "\r\n" .
-"Content-type: text/html; charset=UTF-8" . "\r\n";
 
-$mail = mail('rw1zz@yandex.ru', 'Заказ бургера', $mail_msg, $headers);
+echo  $mail_message;
 
+$headers = "From: Администратор сайта <	spureful@gmail.com>\r\n".
+                "MIME-Version: 1.0" . "\r\n" .
+                "Content-type: text/html; charset=UTF-8" . "\r\n";
 
-$data = [];
-if ($mail) {
-  $data['status'] = 'OK';
-  $data['mes'] = "Письмо успешно отправлено"
-    }
-    else {
-        $data['status'] = 'НЕТ';
-        $data['mes'] = "На сервере произошла ошибка"
+    $mail = mail('rw1zz@yandex.ru', 'Заказ', $mail_message, $headers);
+
+    $data = [];
+
+    if ($mail) {
+        $data['status'] = "OK";
+        $data['mes'] = "Письмо успешно отправлено";
+    }else{
+        $data['status'] = "NO";
+        $data['mes'] = "На сервере произошла ошибка";
     }
 
     echo json_encode($data);
-?>
+?> 
