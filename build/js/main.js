@@ -108,32 +108,33 @@ function openTeam() {
 		let anim = 0;
 
 
-				unactiveContent.height(0 + 'px');
+		unactiveContent.height(0 + 'px');
 
 
 
 
 		setTimeout(function uh() {
-			if (anim < 115)
-			{activeContent.height(anim + 'px');
-			anim += 5;}
-//
-//			else if (anim >= 0)
-//			{
-//				unactiveContent.height(anim + 'px');
-//			anim -= 5;
-//			}
-			
+			if (anim < 115) {
+				activeContent.height(anim + 'px');
+				anim += 5;
+			}
+			//
+			//			else if (anim >= 0)
+			//			{
+			//				unactiveContent.height(anim + 'px');
+			//			anim -= 5;
+			//			}
+
 			setTimeout(uh, 30);
 
 		}, 30);
 
-//		setTimeout(function dh() {
-//			if (anim > 0)
-//				unactiveContent.height(anim + 'px');
-//			anim -= 5;
-//			setTimeout(dh, 30);
-//		}, 10);
+		//		setTimeout(function dh() {
+		//			if (anim > 0)
+		//				unactiveContent.height(anim + 'px');
+		//			anim -= 5;
+		//			setTimeout(dh, 30);
+		//		}, 10);
 
 
 
@@ -160,28 +161,28 @@ function openMenuPosition() {
 
 
 
-		const activeContent = $('.screenmenu__item_active').find('.screenmenu__content');
-		console.log(activeContent);
-
-		const unactiveItem = $('.screenmenu__item ').filter('.screenmenu__item ').not('.screenmenu__item_active');
-		const unactiveContent = unactiveItem.find('.screenmenu__content');
-		console.log(unactiveItem);
-		console.log(unactiveContent);
-
-		let wanim = 0;
-
-
-		unactiveContent.width(0 + 'px');
-
-
-		setTimeout(function uh() {
-			if (wanim < 100)
-				activeContent.width(wanim + '%');
-			wanim += 5;
-
-			setTimeout(uh, 10);
-
-		}, 10);
+		//		const activeContent = $('.screenmenu__item_active').find('.screenmenu__content');
+		//		console.log(activeContent);
+		//
+		//		const unactiveItem = $('.screenmenu__item ').filter('.screenmenu__item ').not('.screenmenu__item_active');
+		//		const unactiveContent = unactiveItem.find('.screenmenu__content');
+		//		console.log(unactiveItem);
+		//		console.log(unactiveContent);
+		//
+		//		let wanim = 0;
+		//
+		//
+		//		unactiveContent.width(0 + 'px');
+		//
+		//
+		//		setTimeout(function uh() {
+		//			if (wanim < 100)
+		//				activeContent.width(wanim + '%');
+		//			wanim += 5;
+		//
+		//			setTimeout(uh, 10);
+		//
+		//		}, 10);
 
 
 	});
@@ -208,14 +209,14 @@ function commentsPopup() {
 
 	console.log(allStyle.opacity);
 
-	let op = 0;
-	op.toFixed(1);
+	let op;
+
 
 
 
 	for (var i = 0; i < openPop.length; i++) {
 		openPop[i].addEventListener('click', function () {
-			console.log('start');
+
 			var z = this;
 			var popParent = z.parentNode;
 			//			console.log(popParent);
@@ -223,10 +224,9 @@ function commentsPopup() {
 			const name = popParent.querySelector('.screencomments__title');
 
 			const comment = popParent.querySelector('.screencomments__text');
-
+ op = 0;
 			console.log(op);
 
-			popup.classList.add('screencomments__popup_active');
 
 			namePopup.textContent = name.innerHTML;
 			commentPopup.textContent = comment.innerHTML;
@@ -235,7 +235,9 @@ function commentsPopup() {
 			console.log(op);
 
 			setTimeout(function (opac) {
-				popup.style.opacity = op.toFixed(1);
+
+				popup.style.display = 'flex';
+				popup.style.opacity =op;
 
 				op += 0.2;
 				console.log(op)
@@ -245,7 +247,7 @@ function commentsPopup() {
 						100)
 
 				}
-				return op;
+
 			}, 100);
 		});
 
@@ -254,30 +256,23 @@ function commentsPopup() {
 
 
 		closePop.addEventListener('click', function () {
-			popup.classList.remove('screencomments__popup_active');
 
-
-			console.log(op);
 			op = 1;
 			console.log(op);
 			setTimeout(function (unopac) {
-//				debugger;
+
 				popup.style.opacity = op;
 				op -= 0.2;
-				op.toFixed(1);
-
-
-				console.log(op)
-				op.toFixed(1);
+		
 				console.log(op)
 				if (op > 0) {
 
 					setTimeout(arguments.callee,
-						500)
+						100)
 
 				}
-
-			}, 500);
+								popup.style.display = 'none';
+			}, 100);
 		});
 
 	}
@@ -362,11 +357,6 @@ function OnePageScroll() {
 
 
 
-	//screenActive(screen);
-
-
-	//		console.log(screens);
-
 
 
 	function scrollDown() {
@@ -381,10 +371,10 @@ function OnePageScroll() {
 
 	};
 
-	
 
-//дата-метод!
-	
+
+	//дата-метод!
+
 	function scrollUp() {
 		if (i < 0 && i >= (-700)) {
 			i += 100
@@ -418,9 +408,15 @@ function OnePageScroll() {
 	document.addEventListener('wheel', function (e) {
 		const deltay = e.deltaY;
 		console.log(deltay);
+		console.log(inf);
+
+		//		for (i = 0; i < screen.length; i++)
+		//			var inf = screen[i].dataset.screen; // нашла, что их 8. но как мне найти именно нужный???
+		//		for (i = 0; i < inf.length; i++)
+		//			console.log(inf[i]);
 
 		if (deltay > 0) scrollDown();
-		console.log($(this).find('screen'));
+
 
 		if (deltay < 0) scrollUp();
 	});

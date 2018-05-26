@@ -1156,23 +1156,11 @@ a {
   line-height: 1.5rem;
   padding: 3.125rem 1.875rem; }
 
-.screenmenu__position_active + .screenmenu__content {
-  width: 78%; }
-  @media screen and (max-width: 945px) {
-    .screenmenu__position_active + .screenmenu__content {
-      width: 100%; } }
-
-.screenmenu__position_active .screenmenu__position-title {
-  color: #f9b43b; }
-
-.screenmenu__content-active {
-  width: 100%; }
-  @media screen and (max-width: 945px) {
-    .screenmenu__content-active {
-      width: 100%; } }
-
 .screenmenu__item_active .screenmenu__position-title {
   color: #f9b43b; }
+
+.screenmenu__item_active .screenmenu__content {
+  width: 100%; }
 
 .screencomments {
   display: -webkit-box;
@@ -1385,12 +1373,6 @@ a {
 
 .screencomments__popup-content {
   color: #2f3234; }
-
-.screencomments__popup_active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  opacity: 0; }
 
 .screenform {
   background-image: url(../img/form_screen/bg-screenform.jpg);
