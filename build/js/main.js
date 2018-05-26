@@ -371,15 +371,11 @@ const performTransition = sectionEq => {
 
   inScroll = true;
 
-  sections
-      .eq(sectionEq)
-      .addClass('active')
-      .siblings()
-      .removeClass('active');
+  sections.eq(sectionEq).addClass('screenactive').siblings().removeClass('screenactive');
 
   display.css({
-      transform: `translate(0, ${position})`,
-      '-webkit-transform': `translate(0, ${position})`
+      transform: `translateY( ${position})`,
+      '-webkit-transform': `translateY( ${position})`
   });
 
 
@@ -393,7 +389,7 @@ const performTransition = sectionEq => {
 };
 
 const scrollToSection = direction => {
-    const activeSection = sections.filter('.active');
+    const activeSection = sections.filter('.screenactive');
     const nextSection = activeSection.next();
     const prevSection = activeSection.prev();
 
