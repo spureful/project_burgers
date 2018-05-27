@@ -40,7 +40,7 @@ $mail_message = '
 </body>
 </html>';
 
-echo  $mail_message;
+
 
 $headers = "From: Администратор сайта <	rw1zz@yandex.ru>\r\n".
                 "MIME-Version: 1.0" . "\r\n" .

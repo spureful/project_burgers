@@ -566,20 +566,19 @@ $('#screenform__form').on('submit', submitForm);
 
 		request.done(function (msg) {
 			
-console.log('start')
+
 			const mes = msg.mes,
 				status = msg.status;
 			
 			if (status == 'OK') {
 
 
-				console.log('ok');
+		
 				modal.css('display', 'flex');
 				modaltext.append('<span class ="answ">' + mes + '</span>');
 
 			} else {
 
-				console.log('error');
 				modal.css('display', 'flex');
 				modaltext.append('<span class ="answ">' + mes + '</span>');
 
