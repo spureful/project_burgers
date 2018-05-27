@@ -45,9 +45,9 @@
 	}
 
 	@include phone {
-		min-width: rem(320px);
-		width: rem(430px);
-
+		width: rem(280px);
+//		width: rem(430px);
+margin: auto;
 	}
 
 }
@@ -92,11 +92,14 @@
 	}
 
 	@include phone {
-		min-width: rem(320px);
-		width: rem(431px);
+		width: rem(280px);
+	
+		margin: auto;
+//		width: rem(431px);
 	}
 
 }
+
 
 .screenslider__image {
 
@@ -341,6 +344,10 @@
 	position: absolute;
 	top: 50%;
 	left: 0;
+	
+	@include phone {
+		left: 2%;
+	}
 }
 
 .screenslider__arrow-right {
@@ -350,8 +357,7 @@
 	top: 50%;
 	left: 95%;
 
-	@include tablet {
-		//		min-height: rem(28px);
-		//		min-width: rem(26px);
+	@include phone {
+		left: 92%;
 	}
 }

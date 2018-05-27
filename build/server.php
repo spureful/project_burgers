@@ -59,4 +59,14 @@ $headers = "From: Администратор сайта <	spureful@gmail.com>\r\
     }
 
     echo json_encode($data);
+
+if ($name === '')
+{
+	$data['text'] = 'Введите имя!'
+}
+
+if ($phone === '')
+{
+	$data['text'] = 'Пожалуйста, укажите номер телефона'
+}
 ?> 

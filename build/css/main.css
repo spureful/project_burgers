@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.hamburgermenu, .screenslider__text, .screenteam__text, .screenmenu__content-text, .screenform__label-name, .screenform__button-clear, .screenform__answ, .screencontacts__map-hint, .screencontacts__map-balloon, .footer__contacts-adress {
+.hamburgermenu, .screenslider__text, .screenteam__text, .screenmenu__content-text, .screenform__label-name, .screenform__button-clear, .screenform__answ-text, .screencontacts__map-hint, .screencontacts__map-balloon, .footer__contacts-adress {
   font-family: 'ubuntulight', sans-serif;
   color: #fff;
   font-size: 0.875rem;
@@ -172,38 +172,9 @@ a {
   display: block; }
   .menu__item-link_button:hover {
     color: burlywood; }
-
-.menu__hamburger {
-  vertical-align: middle;
-  height: 1.5rem;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-left: 1.25rem;
-  display: none;
-  position: relative; }
   @media screen and (max-width: 945px) {
-    .menu__hamburger {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex; } }
-
-.menu__hamburger-items, .menu__hamburger-items:before, .menu__hamburger-items:after {
-  background-color: #fff;
-  width: 1.5rem;
-  height: 0.25rem;
-  border-radius: 0.1875rem; }
-
-.menu__hamburger-items:before, .menu__hamburger-items:after {
-  content: "";
-  display: block;
-  position: absolute; }
-
-.menu__hamburger-items:before {
-  top: 0; }
-
-.menu__hamburger-items:after {
-  bottom: 0; }
+    .menu__item-link_button {
+      margin-left: -15%; } }
 
 .screenmeeting__content {
   display: -webkit-box;
@@ -281,6 +252,40 @@ a {
   background-repeat: no-repeat;
   margin: auto;
   margin-bottom: 1.875rem; }
+
+.menu__hamburger {
+  vertical-align: middle;
+  height: 1.5rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 1.25rem;
+  display: none;
+  position: fixed;
+  top: 4%;
+  right: 2%; }
+  @media screen and (max-width: 945px) {
+    .menu__hamburger {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
+
+.menu__hamburger-items, .menu__hamburger-items:before, .menu__hamburger-items:after {
+  background-color: #fff;
+  width: 1.5rem;
+  height: 0.25rem;
+  border-radius: 0.1875rem; }
+
+.menu__hamburger-items:before, .menu__hamburger-items:after {
+  content: "";
+  display: block;
+  position: absolute; }
+
+.menu__hamburger-items:before {
+  top: 0; }
+
+.menu__hamburger-items:after {
+  bottom: 0; }
 
 .hamburgermenu {
   position: fixed;
@@ -585,8 +590,8 @@ a {
       margin: 0 auto; } }
   @media screen and (max-width: 490px) {
     .screenslider__block {
-      min-width: 20rem;
-      width: 26.875rem; } }
+      width: 17.5rem;
+      margin: auto; } }
 
 .screenslider__list {
   display: -webkit-box;
@@ -636,8 +641,8 @@ a {
       justify-content: center; } }
   @media screen and (max-width: 490px) {
     .screenslider__item {
-      min-width: 20rem;
-      width: 26.9375rem; } }
+      width: 17.5rem;
+      margin: auto; } }
 
 .screenslider__image {
   position: relative;
@@ -904,6 +909,9 @@ a {
   position: absolute;
   top: 50%;
   left: 0; }
+  @media screen and (max-width: 490px) {
+    .screenslider__arrow-left, .screenslider__arrow-right {
+      left: 2%; } }
 
 .screenslider__arrow-right {
   -webkit-transform: rotate(270deg);
@@ -912,6 +920,9 @@ a {
   position: absolute;
   top: 50%;
   left: 95%; }
+  @media screen and (max-width: 490px) {
+    .screenslider__arrow-right {
+      left: 92%; } }
 
 .screenteam {
   background-image: url(../img/team_screen/bg_team.jpg);
@@ -972,7 +983,8 @@ a {
       flex-direction: column;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      align-items: center; } }
+      align-items: center;
+      margin-bottom: 0.625rem; } }
 
 .screenteam__item-block {
   background-color: transparent;
@@ -1019,17 +1031,15 @@ a {
   @media screen and (max-width: 945px) {
     .screenteam__content {
       margin-top: 0.625rem;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      margin: 0;
-      padding: 0; } }
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      margin-top: 5%;
+      padding: 0;
+      max-width: 18.75rem; } }
 
 .screenteam__avatar-img {
   border-radius: 50%;
@@ -1043,7 +1053,10 @@ a {
 
 .screenteam__info {
   padding-left: 1.25rem;
-  max-width: 14.375rem; }
+  width: 18.75rem; }
+  @media screen and (max-width: 945px) {
+    .screenteam__info {
+      padding-left: 0.4375rem; } }
 
 .screenteam__position {
   font-family: 'ubuntubold';
@@ -1054,7 +1067,7 @@ a {
   padding-bottom: 0.9375rem; }
   @media screen and (max-width: 945px) {
     .screenteam__position {
-      text-align: center; } }
+      text-align: left; } }
 
 .screenmenu {
   background-image: url(../img/menu_screen/bg_screenmenu.jpg);
@@ -1383,7 +1396,8 @@ a {
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
 
 .screenform__container {
   -webkit-box-orient: vertical;
@@ -1574,7 +1588,9 @@ a {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  border-right: 5px;
+  border-radius: 5px;
+  padding: 2%;
+  border: 2px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1587,9 +1603,14 @@ a {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  display: none; }
 
-.btn-modal {
+.screenform__answ-text {
+  color: black;
+  margin-bottom: 2%; }
+
+.screenform__btn-modal {
   border-radius: 5px;
   border: none;
   padding: 0.5rem 0.9375rem;
@@ -1600,8 +1621,11 @@ a {
   font-weight: 600;
   color: #fff;
   text-transform: uppercase; }
-  .btn-modal:hover {
+  .screenform__btn-modal:hover {
     color: burlywood; }
+
+.sucsess_mes {
+  color: grreen; }
 
 .screencontacts {
   display: -webkit-box;

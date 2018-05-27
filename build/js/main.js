@@ -21,6 +21,12 @@ function openMenu() {
 		wrapper.style.overflow = 'visible';
 	});
 
+	
+	$('.hamburgermenu__link').on('click', function(e){
+		menu.fadeOut();
+		$(this).parent('hamburgermenu').removeClass('hamburgermenu_visible');
+		
+	});
 }
 
 
@@ -344,185 +350,185 @@ $(function () {
 //
 
 function OnePageScroll() {
-	
+
 	const sections = $(".screen");
-const display = $(".maincontent");
-let inScroll = false;
+	const display = $(".maincontent");
+	let inScroll = false;
 
-const mobileDetect = new MobileDetect(window.navigator.userAgent);
-const isMobile = mobileDetect.mobile();
+	const mobileDetect = new MobileDetect(window.navigator.userAgent);
+	const isMobile = mobileDetect.mobile();
 
-const setActiveMenuItem = itemEq => {
-  $('.pagginator__item').eq(itemEq).addClass('pagginator__item_active')
-    .siblings().removeClass('pagginator__item_active')
-} 
+	const setActiveMenuItem = itemEq => {
+		$('.pagginator__item').eq(itemEq).addClass('pagginator__item_active')
+			.siblings().removeClass('pagginator__item_active')
+	}
 
-const performTransition = sectionEq => {
-  const position = `${sectionEq * -100}%`;
+	const performTransition = sectionEq => {
+		const position = `${sectionEq * -100}%`;
 
-  if (inScroll) return;
+		if (inScroll) return;
 
-  inScroll = true;
+		inScroll = true;
 
-  sections
-    .eq(sectionEq)
-    .addClass("screenactive")
-    .siblings()
-    .removeClass("screenactive");
+		sections
+			.eq(sectionEq)
+			.addClass("screenactive")
+			.siblings()
+			.removeClass("screenactive");
 
-  display.css({
-    transform: `translate(0, ${position})`,
-    "-webkit-transform": `translate(0, ${position})`
-  });
+		display.css({
+			transform: `translate(0, ${position})`,
+			"-webkit-transform": `translate(0, ${position})`
+		});
 
-  setTimeout(() => {
-    inScroll = false;
-    setActiveMenuItem(sectionEq);
-  }, 1300);
-};
+		setTimeout(() => {
+			inScroll = false;
+			setActiveMenuItem(sectionEq);
+		}, 1300);
+	};
 
-const scrollToSection = direction => {
-  const activeSection = sections.filter(".screenactive");
-  const nextSection = activeSection.next();
-  const prevSection = activeSection.prev();
+	const scrollToSection = direction => {
+		const activeSection = sections.filter(".screenactive");
+		const nextSection = activeSection.next();
+		const prevSection = activeSection.prev();
 
-  if (direction === "up" && prevSection.length) {
-    performTransition(prevSection.index());
-	  	  console.log(-prevSection.index())
+		if (direction === "up" && prevSection.length) {
+			performTransition(prevSection.index());
+			console.log(-prevSection.index())
 
-  }
+		}
 
-  if (direction === "down" && nextSection.length) {
-    performTransition(nextSection.index());
-	  console.log(nextSection.index()-1)
-  }
-};
+		if (direction === "down" && nextSection.length) {
+			performTransition(nextSection.index());
+			console.log(nextSection.index() - 1)
+		}
+	};
 
-$(document).on({
-  wheel: e => {
-    const deltaY = e.originalEvent.deltaY;
-    const direction = deltaY > 0 ? "down" : "up";
+	$(document).on({
+		wheel: e => {
+			const deltaY = e.originalEvent.deltaY;
+			const direction = deltaY > 0 ? "down" : "up";
 
-    scrollToSection(direction);
-  },
-  keydown: e => {
-    switch (e.keyCode) {
-      case 40:
-        scrollToSection("down");
-        break;
+			scrollToSection(direction);
+		},
+		keydown: e => {
+			switch (e.keyCode) {
+				case 40:
+					scrollToSection("down");
+					break;
 
-      case 38:
-        scrollToSection("up");
-        break;
-    }
-  },
-  touchmove: e => e.preventDefault()
-
-
-});
+				case 38:
+					scrollToSection("up");
+					break;
+			}
+		},
+		touchmove: e => e.preventDefault()
 
 
-$('[data-scroll-to]').on('click', e => {
-  e.preventDefault();
-
-  const target = parseInt($(e.currentTarget).attr('data-scroll-to'));
+	});
 
 
-  performTransition(target);
+	$('[data-scroll-to]').on('click', e => {
+		e.preventDefault();
 
-})
+		const target = parseInt($(e.currentTarget).attr('data-scroll-to'));
 
-if (isMobile) {
-  $(document).swipe({
-    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-      /**
-       * плагин возвращает фактическое...
-       * ...
-       */
-      const scrollDirection = direction === 'down' ? 'up' : 'down';
-      
-      scrollToSection(scrollDirection);
-    }
-  });
-}
-	
+
+		performTransition(target);
+
+	})
+
+	if (isMobile) {
+		$(document).swipe({
+			swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+				/**
+				 * плагин возвращает фактическое...
+				 * ...
+				 */
+				const scrollDirection = direction === 'down' ? 'up' : 'down';
+
+				scrollToSection(scrollDirection);
+			}
+		});
+	}
+
 	//	
 	///mine
-//	const screen = document.querySelectorAll(".screen");
-//
-//
-//
-//	const main = document.querySelector(".maincontent");
-//
-//	let i = 0;
-//
-//
-//
-//
-//	function scrollDown() {
-//		if (i <= 0 && i > (-700)) {
-//			i -= 100
-//		};
-//
-//		main.style.transform = `translateY(${i}%)`;
-//
-//	};
-//
-//
-//
-//	//дата-метод!
-//
-//	function scrollUp() {
-//		if (i < 0 && i >= (-700)) {
-//			i += 100
-//		};
-//		main.style.transform = `translateY(${i}%)`;
-//		//		console.log(i);
-//		return i;
-//	};
-//
-//
-//	document.addEventListener('keydown', function (e) {
-//
-//			//			console.log(e.keyCode);
-//
-//			if (e.keyCode == 40) {
-//
-//				scrollDown();
-//
-//
-//			}
-//
-//			if (e.keyCode == 38) {
-//				scrollUp()
-//
-//			}
-//
-//		}
-//
-//	);
-//
-//	document.addEventListener('wheel', function (e) {
-//		const deltay = e.deltaY;
-//		//		console.log(deltay);
-//
-//
-//		//		const screenmeeting = document.querySelector(".screenmeeting");
-//		//		console.log(screenmeeting.dataset.screenScroll);
-//
-//
-//
-//		//		for (i = 0; i < screen.length; i++) //
-//		//			var inf = screen[i].dataset.screen; // нашла, что их 8. но как мне найти именно нужный???
-//		//		for (i = 0; i < inf.length; i++) ///
-//		//			console.log(inf[i]);    //
-//
-//		if (deltay > 0) scrollDown();
-//		const target = $('.screen').attr('data-screenScroll');
-//		console.log(target);
-//
-//		if (deltay < 0) scrollUp();
-//	});
+	//	const screen = document.querySelectorAll(".screen");
+	//
+	//
+	//
+	//	const main = document.querySelector(".maincontent");
+	//
+	//	let i = 0;
+	//
+	//
+	//
+	//
+	//	function scrollDown() {
+	//		if (i <= 0 && i > (-700)) {
+	//			i -= 100
+	//		};
+	//
+	//		main.style.transform = `translateY(${i}%)`;
+	//
+	//	};
+	//
+	//
+	//
+	//	//дата-метод!
+	//
+	//	function scrollUp() {
+	//		if (i < 0 && i >= (-700)) {
+	//			i += 100
+	//		};
+	//		main.style.transform = `translateY(${i}%)`;
+	//		//		console.log(i);
+	//		return i;
+	//	};
+	//
+	//
+	//	document.addEventListener('keydown', function (e) {
+	//
+	//			//			console.log(e.keyCode);
+	//
+	//			if (e.keyCode == 40) {
+	//
+	//				scrollDown();
+	//
+	//
+	//			}
+	//
+	//			if (e.keyCode == 38) {
+	//				scrollUp()
+	//
+	//			}
+	//
+	//		}
+	//
+	//	);
+	//
+	//	document.addEventListener('wheel', function (e) {
+	//		const deltay = e.deltaY;
+	//		//		console.log(deltay);
+	//
+	//
+	//		//		const screenmeeting = document.querySelector(".screenmeeting");
+	//		//		console.log(screenmeeting.dataset.screenScroll);
+	//
+	//
+	//
+	//		//		for (i = 0; i < screen.length; i++) //
+	//		//			var inf = screen[i].dataset.screen; // нашла, что их 8. но как мне найти именно нужный???
+	//		//		for (i = 0; i < inf.length; i++) ///
+	//		//			console.log(inf[i]);    //
+	//
+	//		if (deltay > 0) scrollDown();
+	//		const target = $('.screen').attr('data-screenScroll');
+	//		console.log(target);
+	//
+	//		if (deltay < 0) scrollUp();
+	//	});
 
 }
 
@@ -538,6 +544,11 @@ function ScreenForm() {
 	function submitForm(e) {
 		e.preventDefault();
 
+		const modal = $('.screenform__answ'),
+			modaltext = $('.screenform__answ-text');
+
+
+
 		const form = $(e.target),
 			data = form.serialize(),
 			type = form.attr('method'),
@@ -550,17 +561,45 @@ function ScreenForm() {
 			data: data
 		});
 
-		request.done(function (msg) {
+	request.done(function (msg) {
 			const mes = msg.mes,
 				status = msg.status;
 			if (status === 'ОК') {
-				form.append('<div class="screenform__answ">' + mes + '</div>');
+
+			
+				console.log('ok');
+				modal.css('display', 'flex');
+				modaltext.append('<span class ="answ">' + mes + '</span>');
+
 			} else {
-				form.append('<div class="screenform__answ">' + mes + '</div>');
+			
+				console.log('error');
+				modal.css('display', 'flex');
+				modaltext.append('<span class ="answ">' + mes + '</span>');
+			
 			}
+		
+		const modalbtn = $('.screenform__btn-modal'); modalbtn.on('click', function () {
+				$('.screenform__answ').css('display', 'none');
+			});
+		
 		});
+//
+//		request.done(function (answ) {
+//				
+//				if (answ.status === 'ОК') {
+//					form.append('.sucsess_mes').text(answ.text).show();
+//				} else{
+//				form.find('.error_mes').text(answ.text).show();
+//				}
+//			});
 
-	};
-};
+			
 
-ScreenForm();
+			//валидация форм
+
+
+
+		};
+}
+		ScreenForm();

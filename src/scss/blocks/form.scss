@@ -2,10 +2,10 @@
 	background-image: url(../img/form_screen/bg-screenform.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	
+
 	display: flex;
 	align-items: center;
-		
+	position: relative;
 }
 
 .screenform__container {
@@ -14,12 +14,12 @@
 	align-items: center;
 }
 
-	
+
 
 .screenform__title-text {
 	@include titlefont($yellow);
-//	margin-top: rem(-30px);
-		margin-bottom: rem(50px);
+	//	margin-top: rem(-30px);
+	margin-bottom: rem(50px);
 	@include tablet {
 		text-align: center;
 	}
@@ -27,71 +27,71 @@
 
 .screenform__form {
 	margin: 0 auto;
-	
+
 	display: flex;
-justify-content: space-between;
-	
+	justify-content: space-between;
+
 	.screenform__row {
 		display: flex;
 		width: 100%;
 		margin-bottom: rem(17px);
-		
+
 		@include phone {
 			justify-content: center;
 		}
 	}
-	
+
 	.screenform__row_phone {
 		@include phone {
 			margin-bottom: rem(35px);
 		}
 	}
-	
+
 	.screenform__column {
 		width: 100%;
 		max-width: rem(461px);
 		margin-right: rem(20px);
-         display: flex;
-		
+		display: flex;
+
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-content: flex-start;
-		
+
 		flex-basis: 50%;
-		
+
 		@include phone {
 			margin-right: 0;
 		}
 	}
-	
+
 	.screenform__field {
-	
+
 		margin-right: rem(20px);
-		flex:1;
-		
+		flex: 1;
+
 		&:last-child {
 			margin-right: 0;
 		}
 	}
-	
+
 	@include tablet {
 		flex-direction: column;
 	}
-	
-	
+
+
 }
 
 
-.screenform__label-name{
+.screenform__label-name {
 	@extend %contenttext;
 	margin-bottom: rem(10px);
-	
-	
+
+
 }
 
 .screenform__field-item {
 	@include screenformfield(100%);
-	
+
 }
 
 
@@ -99,12 +99,12 @@ justify-content: space-between;
 .screenform__field-comment {
 	@include screenformfield(100%);
 	min-height: rem(110px);
-	
+
 	padding: rem(15px);
-	
-resize: none;
-	
-	
+
+	resize: none;
+
+
 }
 
 
@@ -115,12 +115,12 @@ resize: none;
 
 .screenform__radio-item {
 	display: none;
-	
+
 	transition: 0.5s;
 	&:checked + .screenform__radiocustom:before {
 		opacity: 1;
 	}
-	
+
 }
 
 .screenform__radiocustom {
@@ -128,35 +128,35 @@ resize: none;
 	height: rem(15px);
 	border-radius: 50%;
 	background-color: #fff;
-	
+
 	display: inline-block;
 	margin-right: rem(5px);
-	
+
 	position: relative;
-	
+
 	&:before {
 		content: "";
 		width: rem(7px);
 		height: rem(7px);
 		border-radius: 50%;
 		background-color: #e35028;
-		
+
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		
+
 		opacity: 0;
 	}
-	
+
 }
 
 
 .screenform__checkbox-item {
 	display: none;
-	
+
 	transition: 0.5s;
-	
+
 	&:checked + .screenform__checkboxcustom:before {
 		opacity: 1;
 	}
@@ -166,26 +166,26 @@ resize: none;
 
 .screenform__checkboxcustom {
 	position: relative;
-	
+
 	margin-right: rem(5px);
 	display: inline-block;
 	width: rem(15px);
 	height: rem(15px);
 	background-color: #fff;
-	
+
 	&:before {
 		content: "";
 		width: rem(11px);
 		height: rem(9px);
-		
+
 		background-image: url(../img/form_screen/check.png);
-		
+
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		opacity: 0;
-		
+
 	}
 }
 
@@ -204,22 +204,36 @@ resize: none;
 	background-color: transparent;
 	border: none;
 }
-.screenform__answ{
+
+.screenform__answ {
 	background-color: #fff;
+
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	border-right: 5px;
-		@extend %contenttext;
-	
+	border-radius: 5px;
+	padding: 2%;
+	border: 2px solid black;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	
+
+	display: none;
 }
 
-.btn-modal {
+.screenform__answ-text {
+	@extend %contenttext;
+	color: black;
+	margin-bottom: 2%;
+}
+
+.screenform__btn-modal {
 	@include button;
+}
+
+.sucsess_mes {
+	color: grreen;
 }
