@@ -542,11 +542,11 @@ function ScreenForm() {
 	$('#screenform__form').on('submit', submitForm);
 
 	function submitForm(e) {
-		e.preventDefault();
+				e.preventDefault();
 
-		const modal = $('.screenform__answ'),
+		
+	const modal = $('.screenform__answ'),
 			modaltext = $('.screenform__answ-text');
-
 
 
 		const form = $(e.target),
@@ -558,48 +558,109 @@ function ScreenForm() {
 			type: type,
 			url: url,
 			dataType: 'JSON',
-			data: data
+			data: data;
+			
+		
 		});
+		
+		console.log('start')
 
-	request.done(function (msg) {
+		request.done(function (msg) {
+
 			const mes = msg.mes,
 				status = msg.status;
 			if (status === 'ОК') {
 
-			
+
 				console.log('ok');
 				modal.css('display', 'flex');
 				modaltext.append('<span class ="answ">' + mes + '</span>');
 
 			} else {
-			
+
 				console.log('error');
 				modal.css('display', 'flex');
 				modaltext.append('<span class ="answ">' + mes + '</span>');
-			
+
 			}
-		
-		const modalbtn = $('.screenform__btn-modal'); modalbtn.on('click', function () {
+
+			const modalbtn = $('.screenform__btn-modal');
+			modalbtn.on('click', function () {
 				$('.screenform__answ').css('display', 'none');
 			});
-		
+
 		});
-//
-//		request.done(function (answ) {
-//				
-//				if (answ.status === 'ОК') {
-//					form.append('.sucsess_mes').text(answ.text).show();
-//				} else{
-//				form.find('.error_mes').text(answ.text).show();
-//				}
-//			});
-
-			
-
-			//валидация форм
+		//
+		//		request.done(function (answ) {
+		//				
+		//				if (answ.status === 'ОК') {
+		//					form.append('.sucsess_mes').text(answ.text).show();
+		//				} else{
+		//				form.find('.error_mes').text(answ.text).show();
+		//				}
+		//			});
 
 
 
-		};
+	};
+
+
+
+	//	clientName.addEventListener('keydown',  letters);
+
 }
-		ScreenForm();
+
+ScreenForm();
+
+//валидация форм
+
+function validForm() {
+
+	const clientName = document.querySelector('#screenform__field-name');
+	const clientPhone = document.querySelector('#screenform__field-phone');
+	const clientStreet = document.querySelector('#screenform__field-street');
+
+	clientName.addEventListener('keydown', letters);
+	clientStreet.addEventListener('keydown', letters);
+
+	function letters(event) {
+		let isDigit = false;
+		let isControl = false;
+
+
+
+		if (event.key == 'й' || event.key == 'ц' || event.key == 'у' || event.key == 'й' || event.key == 'к' || event.key == 'е' || event.key == 'н' || event.key == 'й' || event.key == 'г' || event.key == 'ш' || event.key == 'щ' || event.key == 'й' || event.key == 'з' || event.key == 'х' || event.key == 'ъ' || event.key == 'й' || event.key == 'ф' || event.key == 'ы' || event.key == 'в' || event.key == 'й' || event.key == 'а' || event.key == 'п' || event.key == 'р' || event.key == 'й' || event.key == 'о' || event.key == 'л' || event.key == 'д' || event.key == 'й' || event.key == 'ж' || event.key == 'э' || event.key == 'я' || event.key == 'й' || event.key == 'ч' || event.key == 'с' || event.key == 'м' || event.key == 'й' || event.key == 'и' || event.key == 'т' || event.key == 'ь' || event.key == 'й' || event.key == 'б' || event.key == 'ю' || event.key == 'q' || event.key == 'й' || event.key == 'w' || event.key == 'e' || event.key == 'r' || event.key == 'й' || event.key == 't' || event.key == 'y' || event.key == 'u' || event.key == 'й' || event.key == 'i' || event.key == 'o' || event.key == 'p' || event.key == 'a' || event.key == 's' || event.key == 'd' || event.key == 'f' || event.key == 'g' || event.key == 'h' || event.key == 'j' || event.key == 'k' || event.key == 'l' || event.key == 'z' || event.key == 'x' || event.key == 'c' || event.key == 'v' || event.key == 'b' || event.key == 'n' || event.key == 'm') {
+			isDigit = true;
+		}
+
+		if (event.key == 'Backspace' || event.key == 'Delete' || event.key == 'ArrowRight' || event.key == 'ArrowLeft') {
+			isControl = true;
+		}
+
+		if (!isDigit && !isControl) {
+			event.preventDefault();
+		}
+
+
+	};
+
+
+
+	clientPhone.addEventListener('keydown', function (event) {
+		let isDigit = false;
+		let isControl = false;
+
+		if (event.key >= 0 || event.key >= 9) {
+			isDigit = true;
+		}
+
+		if (event.key == 'Backspace' || event.key == 'Delete' || event.key == 'ArrowRight' || event.key == 'ArrowLeft') {
+			isControl = true;
+		}
+		if (!isDigit && !isControl) {
+			event.preventDefault();
+		}
+	});
+}
+
+validForm();
