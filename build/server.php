@@ -42,11 +42,12 @@ $mail_message = '
 
 echo  $mail_message;
 
-$headers = "From: Администратор сайта <	spureful@gmail.com>\r\n".
+$headers = "From: Администратор сайта <	rw1zz@yandex.ru>\r\n".
                 "MIME-Version: 1.0" . "\r\n" .
                 "Content-type: text/html; charset=UTF-8" . "\r\n";
+               
 
-    $mail = mail('rw1zz@yandex.ru', 'Заказ', $mail_message, $headers);
+    $mail = mail('spureful@gmail.com', 'Заказ', $mail_message, $headers);
 
     $data = [];
 
@@ -58,15 +59,8 @@ $headers = "From: Администратор сайта <	spureful@gmail.com>\r\
         $data['mes'] = "На сервере произошла ошибка";
     }
 
+
     echo json_encode($data);
 
-//if ($name === '')
-//{
-//	$data['text'] = 'Введите имя!'
-//}
-//
-//if ($phone === '')
-//{
-//	$data['text'] = 'Пожалуйста, укажите номер телефона'
-//}
+
 ?> 

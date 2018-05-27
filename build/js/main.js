@@ -539,7 +539,7 @@ OnePageScroll();
 
 
 function ScreenForm() {
-	$('#screenform__form').on('submit', submitForm);
+$('#screenform__form').on('submit', submitForm);
 
 	function submitForm(e) {
 				e.preventDefault();
@@ -557,19 +557,20 @@ function ScreenForm() {
 		const request = $.ajax({
 			type: type,
 			url: url,
-			dataType: 'JSON',
-			data: data;
-			
+//			dataType: 'json',
+			data: data}
+		)
+				
+		 
 		
-		});
-		
-		console.log('start')
 
 		request.done(function (msg) {
-
+			
+console.log('start')
 			const mes = msg.mes,
 				status = msg.status;
-			if (status === 'ОК') {
+			
+			if (status == 'OK') {
 
 
 				console.log('ok');
@@ -584,31 +585,27 @@ function ScreenForm() {
 
 			}
 
-			const modalbtn = $('.screenform__btn-modal');
+			
+
+		}).fail(function(jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);})
+		
+		const modalbtn = $('.screenform__btn-modal');
 			modalbtn.on('click', function () {
 				$('.screenform__answ').css('display', 'none');
 			});
-
-		});
-		//
-		//		request.done(function (answ) {
-		//				
-		//				if (answ.status === 'ОК') {
-		//					form.append('.sucsess_mes').text(answ.text).show();
-		//				} else{
-		//				form.find('.error_mes').text(answ.text).show();
-		//				}
-		//			});
+		
+		
+	
 
 
 
 	};
 
-
-
-	//	clientName.addEventListener('keydown',  letters);
-
 }
+
+	
+
 
 ScreenForm();
 
@@ -664,3 +661,4 @@ function validForm() {
 }
 
 validForm();
+
