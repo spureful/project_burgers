@@ -557,7 +557,7 @@ $('#screenform__form').on('submit', submitForm);
 		const request = $.ajax({
 			type: type,
 			url: url,
-//			dataType: 'json',
+			dataType: 'json',
 			data: data}
 		)
 				
