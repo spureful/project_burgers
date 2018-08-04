@@ -103,6 +103,9 @@ display: block;
 		
 	@include tablet {
 		margin-left: -15%;
+		position: absolute;
+		top: 3.5%;
+		right: 7%;
 	}
 }
 

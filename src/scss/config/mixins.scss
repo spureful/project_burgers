@@ -103,6 +103,11 @@
 		@content;
 	}
 }
+@mixin middle {
+	@media screen and (max-width: 635px) {
+		@content;
+	}
+}
 
 @mixin phone {
 	@media screen and (max-width: 490px) {

@@ -174,7 +174,10 @@ a {
     color: burlywood; }
   @media screen and (max-width: 945px) {
     .menu__item-link_button {
-      margin-left: -15%; } }
+      margin-left: -15%;
+      position: absolute;
+      top: 3.5%;
+      right: 7%; } }
 
 .screenmeeting__content {
   display: -webkit-box;
@@ -1255,7 +1258,10 @@ a {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; } }
-  @media screen and (max-width: 945px) and (max-width: 490px) {
+  @media screen and (max-width: 635px) {
+    .screencomments__content {
+      top: 0.625rem; } }
+  @media screen and (max-width: 490px) {
     .screencomments__content {
       top: 50%;
       left: 50%;

@@ -154,6 +154,8 @@ openTeam();
 
 function openMenuPosition() {
 	const openPos = $('.screenmenu__position-btn');
+	const activeItem = $('.screenmenu__content');
+	
 
 	openPos.on('click', function (e) {
 
@@ -161,31 +163,29 @@ function openMenuPosition() {
 
 		$(this).closest(".screenmenu__item").toggleClass('screenmenu__item_active');
 
+		$(this).closest(".screenmenu__content").width(100 +"%");
 
 
-
-		//		const activeContent = $('.screenmenu__item_active').find('.screenmenu__content');
-		//		console.log(activeContent);
-		//
-		//		const unactiveItem = $('.screenmenu__item ').filter('.screenmenu__item ').not('.screenmenu__item_active');
-		//		const unactiveContent = unactiveItem.find('.screenmenu__content');
-		//		console.log(unactiveItem);
-		//		console.log(unactiveContent);
-		//
-		//		let wanim = 0;
-		//
-		//
-		//		unactiveContent.width(0 + 'px');
-		//
-		//
-		//		setTimeout(function uh() {
-		//			if (wanim < 100)
-		//				activeContent.width(wanim + '%');
-		//			wanim += 5;
-		//
-		//			setTimeout(uh, 10);
-		//
-		//		}, 10);
+//
+//				const activeContent = $('.screenmenu__item_active').find('.screenmenu__content');
+//				const unactiveItem = $('.screenmenu__item ').filter('.screenmenu__item ').not('.screenmenu__item_active');
+//				const unactiveContent = unactiveItem.find('.screenmenu__content');
+//				
+//		
+//				let wanim = 0;
+//		
+//		
+//				unactiveContent.width(0 + 'px');
+//		
+//		
+//				setTimeout(function uh() {
+//					if (wanim < 100)
+//						activeContent.width(wanim + '%');
+//					wanim += 5;
+//		
+//					setTimeout(uh, 10);
+//		
+//				}, 10);
 
 
 	});

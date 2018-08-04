@@ -98,7 +98,11 @@
 		flex-direction: column;
 		align-items: center;
 
-
+	}
+	
+	@include middle {
+		top: rem(10px);
+	}
 		@include phone {
 			top: 50%;
 			left: 50%;
@@ -109,7 +113,7 @@
 			align-items: center;
 		}
 
-	}
+	
 
 }
 
