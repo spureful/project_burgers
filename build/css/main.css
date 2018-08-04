@@ -661,6 +661,10 @@ a {
   height: 21.875rem;
   -o-object-fit: contain;
   object-fit: contain; }
+  @media screen and (max-width: 945px) {
+    .screenslider__img {
+      width: 28.125rem;
+      height: 16.875rem; } }
   @media screen and (max-width: 490px) {
     .screenslider__img {
       width: 20rem;
@@ -1170,13 +1174,19 @@ a {
 
 .screenmenu__content-text {
   line-height: 1.5rem;
+  font-size: 0;
   padding: 3.125rem 1.875rem; }
 
 .screenmenu__item_active .screenmenu__position-title {
   color: #f9b43b; }
 
 .screenmenu__item_active .screenmenu__content {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
   width: 100%; }
+  .screenmenu__item_active .screenmenu__content .screenmenu__content-text {
+    font-size: 0.875rem; }
 
 .screencomments {
   display: -webkit-box;

@@ -125,6 +125,11 @@ margin: auto;
 	object-fit: contain; //	background-image: url(../img/slider_screen/black_burger.png);
 	//	background-repeat: no-repeat;
 	//	background-size: contain;
+	@include tablet {
+		width: rem(450px);
+		height: rem(270px);
+	}
+	
 	@include phone {
 		width: rem(320px);
 		height: rem(200px);
