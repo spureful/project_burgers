@@ -2,30 +2,95 @@
 
 function openMenu() {
 	const openBtn = document.querySelector('.menu__hamburger');
-
-	const menu = $('.hamburgermenu');
 	const closeBtn = document.querySelector('.hamburgermenu__close');
+
+	const menu = document.querySelector('.hamburgermenu');
+	const menuItem = document.querySelectorAll('.hamburgermenu__link');
+
+
 	const wrapper = document.querySelector('.wrapper');
 
-	openBtn.addEventListener('click', function () {
-		menu.fadeIn();
-		menu.addClass('hamburgermenu_visible');
+	let op = 0.2;
+	
 
+
+	openBtn.addEventListener('click', function () {
+			
+		menu.classList.add('hamburgermenu_visible');
+		menu.style.opacity = 0;
+		
+		setTimeout(function foo() {
+			if (op < 1) {
+				op += 0.1;
+				menu.style.opacity = op;
+
+				setTimeout(foo, 100);
+			}
+		}, 100);
 
 		wrapper.style.overflow = 'hidden';
 	});
 
 	closeBtn.addEventListener('click', function () {
-		menu.fadeOut();
-		menu.removeClass('hamburgermenu_visible');
+		
+		setTimeout(function fooC() {
+			
+			if (op > 0) {
+				op -= 0.1;
+				menu.style.opacity = op;
+		
+				setTimeout(fooC, 100);
+			}
+				else {
+			menu.classList.remove("hamburgermenu_visible");		
+				}						
+		}, 100);
+
 		wrapper.style.overflow = 'visible';
+	
+			
+
 	});
 
-	
-	$('.hamburgermenu__link').on('click', function(e){
-		menu.fadeOut();
-		$(this).parent('hamburgermenu').removeClass('hamburgermenu_visible');
+	for (let i = 0; i < menuItem.length; i++) {
+		menuItem[i].addEventListener('click', function () {
+			setTimeout(function fooI() {
+			if (op > 0) {
+				op -= 0.1;
+				menu.style.opacity = op;
 		
+				setTimeout(fooI, 100);
+			}
+				else {
+			menu.classList.remove("hamburgermenu_visible");		
+				}						
+		}, 100);
+
+		wrapper.style.overflow = 'visible';
+		});
+	}
+
+	document.addEventListener("keydown", function (e) {
+		console.log(e.keyCode);
+		if (e.keyCode === 27) {
+
+			if (menu.classList.contains("hamburgermenu_visible")) {
+				setTimeout(function fooK() {
+			if (op > 0) {
+				op -= 0.1;
+				menu.style.opacity = op;
+		
+				setTimeout(fooK, 100);
+			}
+				else {
+			menu.classList.remove("hamburgermenu_visible");		
+				}						
+		}, 100);
+
+		wrapper.style.overflow = 'visible';
+
+			}
+		}
 	});
 }
 
