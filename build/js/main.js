@@ -504,7 +504,7 @@ function OnePageScroll() {
 	})
 
 	if (isMobile) {
-		$(document).swipe({
+		$(window).swipe({
 			swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
 				/**
 				 * плагин возвращает фактическое...
